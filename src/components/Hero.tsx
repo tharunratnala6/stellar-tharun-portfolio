@@ -1,0 +1,140 @@
+
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react';
+
+const Hero = () => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const texts = [
+    "Hi, I'm Tharun Ratnala",
+    "Futuristic Developer",
+    "Tech Explorer",
+    "AI Innovator",
+    "Engineering Student"
+  ];
+
+  useEffect(() => {
+    const currentText = texts[currentTextIndex];
+    if (displayedText.length < currentText.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText(currentText.slice(0, displayedText.length + 1));
+      }, 100);
+      return () => clearTimeout(timeout);
+    } else {
+      const timeout = setTimeout(() => {
+        setDisplayedText('');
+        setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+      }, 2000);
+      return () => clearTimeout(timeout);
+    }
+  }, [displayedText, currentTextIndex, texts]);
+
+  return (
+    <section id="hero" className="min-h-screen flex items-center justify-center relative px-4">
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        {/* Main Glass Panel */}
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-12 shadow-2xl relative overflow-hidden"
+        >
+          {/* Glowing borders */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-xl -z-10" />
+          
+          {/* Typing Animation */}
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent min-h-[120px] flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            {displayedText}
+            <motion.span
+              className="inline-block w-1 h-16 bg-blue-400 ml-2"
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 1, repeat: Infinity }}
+            />
+          </motion.h1>
+
+          <motion.p
+            className="text-xl md:text-2xl text-blue-200 mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.8 }}
+          >
+            Final Year Engineering Student crafting the future with code, AI, and innovation
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            className="flex flex-col sm:flex-row gap-6 justify-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 0.8 }}
+          >
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(59, 130, 246, 0.5)" }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-semibold border border-blue-400/30 backdrop-blur-sm relative overflow-hidden group"
+            >
+              <span className="relative z-10">Explore Projects</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(34, 197, 94, 0.5)" }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-white/10 rounded-full text-white font-semibold border border-white/20 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2"
+            >
+              <Download className="w-5 h-5" />
+              Download Resume
+            </motion.button>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div
+            className="flex justify-center gap-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2, duration: 0.8 }}
+          >
+            {[
+              { icon: Github, href: "#", color: "hover:text-purple-400" },
+              { icon: Linkedin, href: "#", color: "hover:text-blue-400" },
+              { icon: Mail, href: "#", color: "hover:text-green-400" }
+            ].map((social, index) => (
+              <motion.a
+                key={index}
+                href={social.href}
+                whileHover={{ scale: 1.2, y: -5 }}
+                className={`p-3 rounded-full bg-white/10 border border-white/20 text-white/70 transition-all duration-300 ${social.color}`}
+              >
+                <social.icon className="w-6 h-6" />
+              </motion.a>
+            ))}
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2.5, duration: 0.8 }}
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="p-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm"
+        >
+          <ChevronDown className="w-6 h-6 text-blue-400" />
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+};
+
+export default Hero;
