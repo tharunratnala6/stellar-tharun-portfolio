@@ -1,29 +1,41 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, MapPin, Phone, Github, Linkedin, Instagram, MessageSquare, ArrowUp } from 'lucide-react';
+import { Send, Mail, MapPin, Phone, Github, Linkedin, ArrowUp } from 'lucide-react';
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  message?: string;
+}
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     message: ''
   });
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
     // Clear error when user starts typing
-    if (errors[name]) {
+    if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
   };
 
-  const validateForm = () => {
-    const newErrors = {};
+  const validateForm = (): FormErrors => {
+    const newErrors: FormErrors = {};
     
     if (!formData.name.trim()) newErrors.name = 'Name is required';
     if (!formData.email.trim()) {
@@ -36,7 +48,7 @@ const Contact = () => {
     return newErrors;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors = validateForm();
     
@@ -94,18 +106,6 @@ const Contact = () => {
       name: 'LinkedIn',
       href: '#',
       color: 'hover:text-blue-400'
-    },
-    {
-      icon: Instagram,
-      name: 'Instagram',
-      href: '#',
-      color: 'hover:text-pink-400'
-    },
-    {
-      icon: MessageSquare,
-      name: 'WhatsApp',
-      href: '#',
-      color: 'hover:text-green-400'
     }
   ];
 
@@ -279,7 +279,7 @@ const Contact = () => {
             {/* Social Links */}
             <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-white mb-6">Connect on Social</h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}

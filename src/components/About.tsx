@@ -12,12 +12,6 @@ const About = () => {
       icon: GraduationCap,
     },
     {
-      year: '2022',
-      title: 'First Hackathon Win',
-      description: 'Won regional coding competition with AI-based solution',
-      icon: Calendar,
-    },
-    {
       year: '2023',
       title: 'Internship Experience',
       description: 'Software Development Intern at Tech Company',
@@ -27,7 +21,7 @@ const About = () => {
       year: '2024',
       title: 'Final Year Projects',
       description: 'Working on cutting-edge AI and web technologies',
-      icon: GraduationCap,
+      icon: Calendar,
     },
   ];
 
@@ -67,8 +61,13 @@ const About = () => {
                   whileHover={{ scale: 1.05, rotateY: 5 }}
                   className="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1"
                 >
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-800 to-slate-700 flex items-center justify-center text-6xl font-bold text-white">
-                    TR
+                  {/* Placeholder for profile picture - you can replace this with an actual image */}
+                  <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-800 to-slate-700 flex items-center justify-center overflow-hidden">
+                    <img 
+                      src="/placeholder.svg" 
+                      alt="Tharun Ratnala" 
+                      className="w-full h-full object-cover rounded-full"
+                    />
                   </div>
                 </motion.div>
                 <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-xl scale-110 -z-10" />

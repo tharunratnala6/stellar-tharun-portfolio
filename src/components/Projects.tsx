@@ -6,7 +6,7 @@ import { Github, ExternalLink, Star, Code, Zap } from 'lucide-react';
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   
-  const filters = ['All', 'AI/ML', 'Web Dev', 'Mobile', 'IoT', 'Blockchain'];
+  const filters = ['All', 'AI/ML', 'Web Dev', 'Blockchain', 'IoT'];
   
   const projects = [
     {
@@ -49,28 +49,6 @@ const Projects = () => {
       image: '/placeholder.svg',
       tags: ['Arduino', 'React Native', 'Firebase', 'IoT'],
       category: 'IoT',
-      github: '#',
-      demo: '#',
-      featured: false,
-    },
-    {
-      id: 5,
-      title: 'E-commerce Mobile App',
-      description: 'Full-featured shopping app with AR product preview and payment integration.',
-      image: '/placeholder.svg',
-      tags: ['React Native', 'Node.js', 'MongoDB', 'ARKit'],
-      category: 'Mobile',
-      github: '#',
-      demo: '#',
-      featured: false,
-    },
-    {
-      id: 6,
-      title: 'Machine Learning Dashboard',
-      description: 'Interactive dashboard for visualizing ML model performance and data insights.',
-      image: '/placeholder.svg',
-      tags: ['Python', 'Streamlit', 'Pandas', 'Plotly'],
-      category: 'AI/ML',
       github: '#',
       demo: '#',
       featured: false,
@@ -134,7 +112,7 @@ const Projects = () => {
         {/* Projects Grid */}
         <motion.div
           layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 gap-8"
         >
           {filteredProjects.map((project, index) => (
             <motion.div
@@ -145,9 +123,7 @@ const Projects = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className={`backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl group relative ${
-                project.featured ? 'lg:col-span-2 lg:row-span-1' : ''
-              }`}
+              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl group relative"
             >
               {/* Featured Badge */}
               {project.featured && (

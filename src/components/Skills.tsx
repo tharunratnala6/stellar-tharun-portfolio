@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Database, Smartphone, Brain, Globe, Shield } from 'lucide-react';
+import { Code, Globe } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
@@ -27,52 +27,6 @@ const Skills = () => {
         { name: 'HTML/CSS', level: 95 },
         { name: 'Tailwind CSS', level: 90 },
         { name: 'GraphQL', level: 75 },
-      ]
-    },
-    {
-      title: 'Mobile Development',
-      icon: Smartphone,
-      color: 'from-purple-500 to-pink-500',
-      skills: [
-        { name: 'React Native', level: 85 },
-        { name: 'Flutter', level: 80 },
-        { name: 'iOS Development', level: 70 },
-        { name: 'Android Development', level: 75 },
-      ]
-    },
-    {
-      title: 'AI/Machine Learning',
-      icon: Brain,
-      color: 'from-orange-500 to-red-500',
-      skills: [
-        { name: 'TensorFlow', level: 82 },
-        { name: 'PyTorch', level: 78 },
-        { name: 'Scikit-learn', level: 85 },
-        { name: 'OpenCV', level: 75 },
-        { name: 'Natural Language Processing', level: 70 },
-      ]
-    },
-    {
-      title: 'Database & Cloud',
-      icon: Database,
-      color: 'from-indigo-500 to-purple-500',
-      skills: [
-        { name: 'PostgreSQL', level: 85 },
-        { name: 'MongoDB', level: 88 },
-        { name: 'AWS', level: 80 },
-        { name: 'Docker', level: 82 },
-        { name: 'Kubernetes', level: 70 },
-      ]
-    },
-    {
-      title: 'Blockchain & Security',
-      icon: Shield,
-      color: 'from-yellow-500 to-orange-500',
-      skills: [
-        { name: 'Solidity', level: 75 },
-        { name: 'Web3.js', level: 78 },
-        { name: 'Ethereum', level: 72 },
-        { name: 'Cybersecurity', level: 68 },
       ]
     },
   ];
@@ -101,7 +55,7 @@ const Skills = () => {
         </motion.div>
 
         {/* Technical Skills */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}

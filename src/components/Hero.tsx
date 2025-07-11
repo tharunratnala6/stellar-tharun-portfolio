@@ -7,7 +7,6 @@ const Hero = () => {
   const [displayedText, setDisplayedText] = useState('');
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const texts = [
-    "Hi, I'm Tharun Ratnala",
     "Futuristic Developer",
     "Tech Explorer",
     "AI Innovator",
@@ -43,26 +42,36 @@ const Hero = () => {
           {/* Glowing borders */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-xl -z-10" />
           
-          {/* Typing Animation */}
+          {/* Fixed Name */}
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent min-h-[120px] flex items-center justify-center"
+            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            {displayedText}
+            Hi, I'm Tharun Ratnala
+          </motion.h1>
+
+          {/* Typing Animation */}
+          <motion.div 
+            className="text-3xl md:text-4xl font-semibold mb-6 text-blue-200 min-h-[60px] flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+          >
+            <span>{displayedText}</span>
             <motion.span
-              className="inline-block w-1 h-16 bg-blue-400 ml-2"
+              className="inline-block w-1 h-8 bg-blue-400 ml-2"
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 1, repeat: Infinity }}
             />
-          </motion.h1>
+          </motion.div>
 
           <motion.p
             className="text-xl md:text-2xl text-blue-200 mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
           >
             Final Year Engineering Student crafting the future with code, AI, and innovation
           </motion.p>
