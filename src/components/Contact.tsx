@@ -98,13 +98,13 @@ const Contact = () => {
     {
       icon: Github,
       name: 'GitHub',
-      href: '#',
+      href: 'https://github.com/yourusername',
       color: 'hover:text-purple-400'
     },
     {
       icon: Linkedin,
       name: 'LinkedIn',
-      href: '#',
+      href: 'https://linkedin.com/in/tharun-ratnala',
       color: 'hover:text-blue-400'
     }
   ];
