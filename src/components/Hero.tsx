@@ -84,22 +84,26 @@ const Hero = () => {
             transition={{ delay: 1.5, duration: 0.8 }}
           >
             <motion.button
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(59, 130, 246, 0.5)" }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-semibold border border-blue-400/30 backdrop-blur-sm relative overflow-hidden group"
             >
-              <span className="relative z-10">Explore Projects</span>
+              <span className="relative z-10">About Me</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.button>
 
-            <motion.button
+            <motion.a
+              href="https://drive.google.com/file/d/17to5VpBAfQRacPXPC9gxVTHTlT5mSbZJ/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(34, 197, 94, 0.5)" }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-white/10 rounded-full text-white font-semibold border border-white/20 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2"
             >
               <Download className="w-5 h-5" />
               Download Resume
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           {/* Social Links */}
@@ -110,9 +114,9 @@ const Hero = () => {
             transition={{ delay: 2, duration: 0.8 }}
           >
             {[
-              { icon: Github, href: "#", color: "hover:text-purple-400" },
-              { icon: Linkedin, href: "#", color: "hover:text-blue-400" },
-              { icon: Mail, href: "#", color: "hover:text-green-400" }
+              { icon: Github, href: "https://github.com/tharunratnala6", color: "hover:text-purple-400" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/tharunratnala6", color: "hover:text-blue-400" },
+              { icon: Mail, href: "mailto:tharunratnala6@gmail.com", color: "hover:text-green-400" }
             ].map((social, index) => (
               <motion.a
                 key={index}

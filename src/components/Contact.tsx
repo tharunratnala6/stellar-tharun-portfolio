@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, MapPin, Phone, Github, Linkedin, ArrowUp } from 'lucide-react';
+import { Send, Mail, MapPin, Phone, Github, Linkedin, ArrowUp, Download } from 'lucide-react';
 
 interface FormData {
   name: string;
@@ -74,8 +74,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'tharun.ratnala@email.com',
-      href: 'mailto:tharun.ratnala@email.com',
+      value: 'tharunratnala6@gmail.com',
+      href: 'mailto:tharunratnala6@gmail.com',
       color: 'from-red-500 to-pink-500'
     },
     {
@@ -98,13 +98,13 @@ const Contact = () => {
     {
       icon: Github,
       name: 'GitHub',
-      href: 'https://github.com/yourusername',
+      href: 'https://github.com/tharunratnala6',
       color: 'hover:text-purple-400'
     },
     {
       icon: Linkedin,
       name: 'LinkedIn',
-      href: 'https://linkedin.com/in/tharun-ratnala',
+      href: 'https://www.linkedin.com/in/tharunratnala6',
       color: 'hover:text-blue-400'
     }
   ];
@@ -314,7 +314,7 @@ const Contact = () => {
           <ArrowUp className="w-6 h-6" />
         </motion.button>
 
-        {/* Footer */}
+        {/* Download Resume Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -322,7 +322,19 @@ const Contact = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-center mt-16 pt-8 border-t border-white/10"
         >
-          <p className="text-gray-400">
+          <motion.a
+            href="https://drive.google.com/file/d/17to5VpBAfQRacPXPC9gxVTHTlT5mSbZJ/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(34, 197, 94, 0.5)" }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 rounded-full text-white font-semibold border border-green-400/30 backdrop-blur-sm hover:shadow-lg transition-all duration-300 mb-8"
+          >
+            <Download className="w-5 h-5" />
+            Download Resume
+          </motion.a>
+          
+          <p className="text-gray-400 mt-4">
             © 2024 Tharun Ratnala. Crafted with ❤️ using React & Framer Motion
           </p>
         </motion.div>

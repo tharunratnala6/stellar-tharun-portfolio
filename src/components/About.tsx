@@ -6,22 +6,22 @@ import { Download, Calendar, MapPin, GraduationCap } from 'lucide-react';
 const About = () => {
   const timelineItems = [
     {
-      year: '2021',
-      title: 'Started Engineering Journey',
-      description: 'Began Computer Science Engineering at XYZ University',
+      year: '2018 - 2020',
+      title: 'Sri Chaitanya Techno School',
+      description: 'High School Education • Percentage: 85% • Ecil, Hyderabad',
       icon: GraduationCap,
     },
     {
-      year: '2023',
-      title: 'Internship Experience',
-      description: 'Software Development Intern at Tech Company',
-      icon: MapPin,
+      year: '2020 - 2022',
+      title: 'Resonance Junior College',
+      description: 'Intermediate Education (M.P.C) • Percentage: 91.6% • Secunderabad',
+      icon: GraduationCap,
     },
     {
-      year: '2024',
-      title: 'Final Year Projects',
-      description: 'Working on cutting-edge AI and web technologies',
-      icon: Calendar,
+      year: '2022 - 2026',
+      title: 'CMR Institute of Technology',
+      description: 'BTech in Computer Science and Engineering (AI&ML) • CGPA: 7.8 • Hyderabad',
+      icon: GraduationCap,
     },
   ];
 
@@ -67,14 +67,17 @@ const About = () => {
               </p>
 
               {/* Resume Button */}
-              <motion.button
+              <motion.a
+                href="https://drive.google.com/file/d/17to5VpBAfQRacPXPC9gxVTHTlT5mSbZJ/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(34, 197, 94, 0.5)" }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-blue-600 rounded-full text-white font-semibold border border-green-400/30 backdrop-blur-sm flex items-center justify-center gap-2 hover:shadow-lg transition-all duration-300"
               >
                 <Download className="w-5 h-5" />
                 Download Resume
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
 
@@ -111,7 +114,7 @@ const About = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          <h3 className="text-3xl font-bold text-white mb-12 text-center">My Journey</h3>
+          <h3 className="text-3xl font-bold text-white mb-12 text-center">Education</h3>
           <div className="space-y-6">
             {timelineItems.map((item, index) => (
               <motion.div
