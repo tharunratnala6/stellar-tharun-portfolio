@@ -13,6 +13,18 @@ const Skills = () => {
       title: 'Web Technologies',
       skills: ['HTML/CSS', 'Node.js']
     },
+    {
+      title: 'Frameworks',
+      skills: ['OpenCV', 'NumPy', 'Pandas', 'Matplotlib']
+    },
+    {
+      title: 'Software Tools',
+      skills: ['Git', 'Jupyter Notebook', 'Google Colab', 'VS Code']
+    },
+    {
+      title: 'Soft Skills',
+      skills: ['Problem Solving', 'Team Collaboration', 'Communication', 'Time Management', 'Leadership', 'Adaptability', 'Critical Thinking', 'Project Management']
+    },
   ];
 
   return (
@@ -34,7 +46,7 @@ const Skills = () => {
         </motion.div>
 
         {/* Skills */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}

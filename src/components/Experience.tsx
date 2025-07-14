@@ -70,7 +70,19 @@ const Experience = () => {
                       {experience.duration}
                     </span>
                   </div>
-                  <p className="text-gray-300 text-sm leading-relaxed">{experience.description}</p>
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4">{experience.description}</p>
+                  
+                  {/* Verified Certificate Button */}
+                  <motion.a
+                    href="https://drive.google.com/file/d/1iGudUcHqYbn1-bsuxbom94eecyWE9BG1/view?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-green-600/20 border border-green-500/30 rounded-lg text-green-400 hover:bg-green-600/30 transition-all duration-300"
+                  >
+                    <span>Verified Certificate</span>
+                  </motion.a>
                 </div>
               </motion.div>
             ))}

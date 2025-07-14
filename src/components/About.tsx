@@ -41,9 +41,9 @@ const About = () => {
               
               {/* Bio */}
               <p className="text-gray-300 leading-relaxed mb-6">
-                I'm a passionate engineering student with a deep love for technology and innovation. 
-                Specializing in AI, web development, and cutting-edge solutions that solve real-world problems. 
-                Always eager to learn, explore, and push the boundaries of what's possible.
+                I'm a motivated Computer Science Engineering student passionate about learning and delivering quality results. With
+                strong organizational skills and a growth mindset, I'm eager to take on new challenges and gain hands-on experience
+                through internships and real-world projects. Excited for my first work opportunity—let's create something great!
               </p>
 
               {/* Resume Button */}
@@ -73,10 +73,9 @@ const About = () => {
               whileHover={{ scale: 1.05, rotateY: 5 }}
               className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1"
             >
-              {/* Placeholder for profile picture - you can replace this with an actual image */}
               <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-800 to-slate-700 flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/placeholder.svg" 
+                  src="/src/assets/profile-photo.jpg" 
                   alt="Tharun Ratnala" 
                   className="w-full h-full object-cover rounded-full"
                 />

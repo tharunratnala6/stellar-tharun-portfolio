@@ -9,74 +9,68 @@ const Certifications = () => {
   const certifications = [
     {
       id: 1,
-      title: 'AWS Solutions Architect',
-      issuer: 'Amazon Web Services',
+      title: 'Python',
+      issuer: 'IITM GUVI',
       date: '2024',
-      type: 'Professional',
-      description: 'Demonstrated ability to design and deploy scalable, highly available systems on AWS.',
-      skills: ['AWS', 'Cloud Architecture', 'DevOps', 'System Design'],
-      image: '/placeholder.svg',
-      credentialId: 'AWS-SA-12345',
+      type: 'Certificate',
+      description: 'Python programming fundamentals covered',
+      skills: ['Python', 'Programming', 'Coding', 'Development'],
+      verifyUrl: 'https://digitalskills.iitmpravartak.org.in/verify/cert/3z91Vi67268p2B15FG',
       status: 'Active',
     },
     {
       id: 2,
-      title: 'Machine Learning Specialization',
-      issuer: 'Stanford University',
-      date: '2023',
-      type: 'Specialization',
-      description: 'Comprehensive program covering supervised learning, unsupervised learning, and neural networks.',
-      skills: ['Machine Learning', 'Python', 'TensorFlow', 'Data Science'],
-      image: '/placeholder.svg',
-      credentialId: 'STAN-ML-67890',
+      title: 'AIML Virtual Intern',
+      issuer: 'AICTE-GOOGLE',
+      date: '2024',
+      type: 'Internship',
+      description: 'AI ML virtual internship program',
+      skills: ['AI', 'Machine Learning', 'Python', 'Data Science'],
+      verifyUrl: 'https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=659a4a39ccd266a7406feb3fddf69e99',
       status: 'Active',
     },
     {
       id: 3,
-      title: 'Full Stack Web Development',
-      issuer: 'Meta',
-      date: '2023',
-      type: 'Professional Certificate',
-      description: 'End-to-end web development including frontend, backend, and database management.',
-      skills: ['React', 'Node.js', 'JavaScript', 'MongoDB'],
-      image: '/placeholder.svg',
-      credentialId: 'META-FS-54321',
+      title: 'Android Developer Intern',
+      issuer: 'AICTE-GOOGLE',
+      date: '2024',
+      type: 'Internship',
+      description: 'Android development internship program',
+      skills: ['Android', 'Java', 'Mobile Development', 'UI/UX'],
+      verifyUrl: 'https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=c1ca905e0334738ad74e7c2f5dfb386e',
       status: 'Active',
     },
     {
       id: 4,
-      title: 'Google Cloud Professional',
-      issuer: 'Google Cloud',
-      date: '2023',
-      type: 'Professional',
-      description: 'Advanced cloud computing and infrastructure management on Google Cloud Platform.',
-      skills: ['GCP', 'Kubernetes', 'Cloud Storage', 'BigQuery'],
-      image: '/placeholder.svg',
-      credentialId: 'GCP-PRO-98765',
+      title: 'Core Java',
+      issuer: 'Certificate Provider',
+      date: '2024',
+      type: 'Certificate',
+      description: 'Java programming language fundamentals',
+      skills: ['Java', 'OOP', 'Programming', 'Software Development'],
+      verifyUrl: 'https://drive.google.com/file/d/1ey5twC_beAQluRuPQnLupKr_6o-Pag4y/view?usp=drive_link',
       status: 'Active',
     },
     {
       id: 5,
-      title: 'Blockchain Fundamentals',
-      issuer: 'IBM',
-      date: '2022',
-      type: 'Certificate',
-      description: 'Understanding blockchain technology, smart contracts, and decentralized applications.',
-      skills: ['Blockchain', 'Solidity', 'Smart Contracts', 'Web3'],
-      image: '/placeholder.svg',
-      credentialId: 'IBM-BC-11111',
+      title: 'DeepLearning AI',
+      issuer: 'Coursera',
+      date: '2024',
+      type: 'Course',
+      description: 'Deep learning techniques and applications',
+      skills: ['Deep Learning', 'Neural Networks', 'AI', 'TensorFlow'],
+      verifyUrl: 'https://www.coursera.org/account/accomplishments/verify/BT98LTAYY738',
       status: 'Active',
     },
     {
       id: 6,
-      title: 'Cybersecurity Analyst',
-      issuer: 'CompTIA',
-      date: '2022',
-      type: 'Professional',
-      description: 'Security analysis, threat detection, and incident response capabilities.',
-      skills: ['Security Analysis', 'Threat Detection', 'Risk Assessment', 'Compliance'],
-      image: '/placeholder.svg',
-      credentialId: 'COMP-SEC-22222',
+      title: 'Java',
+      issuer: 'Great Learning',
+      date: '2024',
+      type: 'Certificate',
+      description: 'Java programming and development skills',
+      skills: ['Java', 'Programming', 'Development', 'Coding'],
+      verifyUrl: 'https://www.mygreatlearning.com/certificate/YITZEJGQ',
       status: 'Active',
     },
   ];
@@ -261,23 +255,17 @@ const Certifications = () => {
 
                 {/* Actions */}
                 <div className="flex gap-2">
-                  <motion.button
+                  <motion.a
+                    href={cert.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => setSelectedCert(cert)}
-                    className="flex-1 py-2 bg-white/10 rounded-lg text-white text-sm font-medium hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2"
+                    className="w-full py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white text-sm font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
                   >
                     <Eye className="w-4 h-4" />
                     View
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex-1 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white text-sm font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    Verify
-                  </motion.button>
+                  </motion.a>
                 </div>
               </div>
 
