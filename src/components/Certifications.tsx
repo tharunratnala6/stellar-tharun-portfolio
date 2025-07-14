@@ -56,7 +56,7 @@ const Certifications = () => {
       title: 'DeepLearning AI',
       issuer: 'Coursera',
       date: '2024',
-      type: 'Course',
+      type: 'Certificate',
       description: 'Deep learning techniques and applications',
       skills: ['Deep Learning', 'Neural Networks', 'AI', 'TensorFlow'],
       verifyUrl: 'https://www.coursera.org/account/accomplishments/verify/BT98LTAYY738',

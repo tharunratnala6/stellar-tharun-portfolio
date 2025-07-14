@@ -337,7 +337,7 @@ const Contact = () => {
           </motion.a>
           
           <p className="text-gray-400 mt-4">
-            © 2024 Tharun Ratnala. Crafted with ❤️ using React & Framer Motion
+            © 2025 Tharun Ratnala. Crafted with ❤️
           </p>
         </motion.div>
       </div>
