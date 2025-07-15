@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Calendar, MapPin } from 'lucide-react';
@@ -72,7 +73,7 @@ const Experience = () => {
                   </div>
                   <p className="text-gray-300 text-sm leading-relaxed mb-4">{experience.description}</p>
                   
-                  {/* Certificate Button */}
+                  {/* Certificate Button - Changed to blue styling */}
                   <div className="flex justify-center">
                     <motion.a
                       href="https://drive.google.com/file/d/1iGudUcHqYbn1-bsuxbom94eecyWE9BG1/view?usp=drive_link"
@@ -80,7 +81,7 @@ const Experience = () => {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-green-600/20 border border-green-500/30 rounded-lg text-green-400 hover:bg-green-600/30 transition-all duration-300"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white hover:shadow-lg transition-all duration-300 font-medium text-sm"
                     >
                       <span>Program Certificate</span>
                     </motion.a>

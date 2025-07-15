@@ -167,17 +167,15 @@ const Certifications = () => {
 
                 {/* Actions - View Button with Working Link */}
                 <div className="flex gap-2">
-                  <motion.a
-                    href={cert.verifyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <motion.button
+                    onClick={() => window.open(cert.verifyUrl, '_blank', 'noopener,noreferrer')}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-full py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white text-sm font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Eye className="w-4 h-4" />
                     View
-                  </motion.a>
+                  </motion.button>
                 </div>
               </div>
 
