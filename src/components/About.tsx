@@ -75,7 +75,7 @@ const About = () => {
             >
               <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-800 to-slate-700 flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/src/assets/profile-photo.jpg" 
+                  src="/lovable-uploads/a030de20-78ad-4023-8909-f0791d731c10.png" 
                   alt="Tharun Ratnala" 
                   className="w-full h-full object-cover rounded-full"
                 />

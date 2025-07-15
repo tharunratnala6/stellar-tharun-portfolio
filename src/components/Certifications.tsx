@@ -253,7 +253,7 @@ const Certifications = () => {
                   </div>
                 </div>
 
-                {/* Actions */}
+                {/* Actions - View Button with Direct Link */}
                 <div className="flex gap-2">
                   <motion.a
                     href={cert.verifyUrl}

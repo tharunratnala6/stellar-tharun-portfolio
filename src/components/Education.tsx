@@ -9,7 +9,7 @@ const Education = () => {
       year: '2022 - 2026',
       title: 'CMR Institute of Technology',
       subtitle: 'BTech in Computer Science and Engineering (AI&ML)',
-      description: 'Specializing in Artificial Intelligence and Machine Learning',
+      description: 'Specializing in Artificial Intelligence and Machine Learning with comprehensive coursework in advanced computing technologies.',
       details: [
         'CGPA: 7.8',
         'Location: Hyderabad',
@@ -21,7 +21,7 @@ const Education = () => {
       year: '2020 - 2022',
       title: 'Resonance Junior College',
       subtitle: 'Intermediate Education (M.P.C)',
-      description: 'Mathematics, Physics, and Chemistry specialization',
+      description: 'Mathematics, Physics, and Chemistry specialization with strong foundation in analytical and problem-solving skills.',
       details: [
         'Percentage: 91.6%',
         'Location: Secunderabad',
@@ -33,7 +33,7 @@ const Education = () => {
       year: '2018 - 2020',
       title: 'Sri Chaitanya Techno School',
       subtitle: 'High School Education',
-      description: 'Comprehensive secondary education with strong foundation',
+      description: 'Comprehensive secondary education with strong foundation in core subjects and academic excellence.',
       details: [
         'Percentage: 85%',
         'Location: Ecil, Hyderabad',
@@ -87,13 +87,15 @@ const Education = () => {
                     <item.icon className="w-6 h-6 text-white" />
                   </motion.div>
                 </div>
-                <div className="flex-1 backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-white/10 group-hover:bg-white/10 group-hover:border-blue-400/30 transition-all duration-300 hover:shadow-2xl">
-                  <div className="flex items-center gap-2 mb-3">
+                <div className="flex-1 backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-white/10 group-hover:bg-white/10 group-hover:border-blue-400/30 transition-all duration-300 hover:shadow-2xl relative">
+                  {/* Year box moved to right side */}
+                  <div className="absolute top-6 right-6">
                     <span className="text-blue-400 font-bold text-sm bg-blue-500/20 px-3 py-1 rounded-full border border-blue-400/30">
                       {item.year}
                     </span>
                   </div>
-                  <h4 className="text-white font-semibold text-lg mb-2 group-hover:text-blue-400 transition-colors duration-300">
+                  
+                  <h4 className="text-white font-semibold text-lg mb-2 group-hover:text-blue-400 transition-colors duration-300 pr-24">
                     {item.title}
                   </h4>
                   <h5 className="text-blue-200 font-medium text-base mb-3">
