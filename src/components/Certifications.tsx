@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Award, ExternalLink, Calendar, Building, Download, Eye } from 'lucide-react';
@@ -73,95 +74,6 @@ const Certifications = () => {
       status: 'Active',
     },
   ];
-
-  const CertModal = ({ cert, onClose }) => (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-      onClick={onClose}
-    >
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.8, opacity: 0 }}
-        onClick={(e) => e.stopPropagation()}
-        className="max-w-2xl w-full backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-8 shadow-2xl"
-      >
-        <div className="flex items-start justify-between mb-6">
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-2">{cert.title}</h3>
-            <p className="text-blue-400 font-medium">{cert.issuer}</p>
-          </div>
-          <button
-            onClick={onClose}
-            className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-          >
-            ✕
-          </button>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-          <div className="space-y-4">
-            <div>
-              <label className="text-gray-400 text-sm">Issue Date</label>
-              <p className="text-white font-medium">{cert.date}</p>
-            </div>
-            <div>
-              <label className="text-gray-400 text-sm">Credential ID</label>
-              <p className="text-white font-medium font-mono text-sm">{cert.credentialId}</p>
-            </div>
-            <div>
-              <label className="text-gray-400 text-sm">Status</label>
-              <span className="inline-block px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">
-                {cert.status}
-              </span>
-            </div>
-          </div>
-          
-          <div className="flex items-center justify-center bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl p-8">
-            <Award className="w-16 h-16 text-blue-400" />
-          </div>
-        </div>
-
-        <p className="text-gray-300 mb-6">{cert.description}</p>
-
-        <div className="mb-6">
-          <label className="text-gray-400 text-sm mb-2 block">Skills Covered</label>
-          <div className="flex flex-wrap gap-2">
-            {cert.skills.map((skill, index) => (
-              <span
-                key={index}
-                className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm border border-blue-500/30"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex gap-4">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex-1 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
-          >
-            <ExternalLink className="w-4 h-4" />
-            Verify Certificate
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex-1 py-3 bg-white/10 border border-white/20 rounded-lg text-white font-medium hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2"
-          >
-            <Download className="w-4 h-4" />
-            Download PDF
-          </motion.button>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
 
   return (
     <section id="certifications" className="py-20 px-4 relative">
@@ -253,7 +165,7 @@ const Certifications = () => {
                   </div>
                 </div>
 
-                {/* Actions - View Button with Direct Link */}
+                {/* Actions - View Button with Working Link */}
                 <div className="flex gap-2">
                   <motion.a
                     href={cert.verifyUrl}
@@ -261,7 +173,7 @@ const Certifications = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white text-sm font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
+                    className="w-full py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white text-sm font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Eye className="w-4 h-4" />
                     View
@@ -274,14 +186,6 @@ const Certifications = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Certificate Modal */}
-        {selectedCert && (
-          <CertModal 
-            cert={selectedCert} 
-            onClose={() => setSelectedCert(null)} 
-          />
-        )}
       </div>
     </section>
   );

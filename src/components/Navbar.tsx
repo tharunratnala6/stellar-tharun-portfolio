@@ -59,7 +59,7 @@ const Navbar = () => {
           isScrolled ? 'bg-black/30 backdrop-blur-xl border-b border-white/10' : ''
         }`}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-full mx-auto">
           <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-full px-6 py-3 shadow-2xl">
             <div className="flex items-center justify-between">
               {/* Logo */}
@@ -67,7 +67,7 @@ const Navbar = () => {
                 whileHover={{ scale: 1.05 }}
                 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
               >
-                TR
+                THARUN RATNALA
               </motion.div>
 
               {/* Desktop Navigation */}
