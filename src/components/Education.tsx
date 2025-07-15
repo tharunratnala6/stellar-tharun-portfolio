@@ -1,25 +1,44 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, Award } from 'lucide-react';
 
 const Education = () => {
   const timelineItems = [
     {
       year: '2022 - 2026',
       title: 'CMR Institute of Technology',
-      description: 'BTech in Computer Science and Engineering (AI&ML) • CGPA: 7.8 • Hyderabad',
+      subtitle: 'BTech in Computer Science and Engineering (AI&ML)',
+      description: 'Specializing in Artificial Intelligence and Machine Learning',
+      details: [
+        'CGPA: 7.8',
+        'Location: Hyderabad',
+        'Focus: AI/ML, Data Science, Software Engineering'
+      ],
       icon: GraduationCap,
     },
     {
       year: '2020 - 2022',
       title: 'Resonance Junior College',
-      description: 'Intermediate Education (M.P.C) • Percentage: 91.6% • Secunderabad',
+      subtitle: 'Intermediate Education (M.P.C)',
+      description: 'Mathematics, Physics, and Chemistry specialization',
+      details: [
+        'Percentage: 91.6%',
+        'Location: Secunderabad',
+        'Stream: Science with Mathematics'
+      ],
       icon: GraduationCap,
     },
     {
       year: '2018 - 2020',
       title: 'Sri Chaitanya Techno School',
-      description: 'High School Education • Percentage: 85% • Ecil, Hyderabad',
+      subtitle: 'High School Education',
+      description: 'Comprehensive secondary education with strong foundation',
+      details: [
+        'Percentage: 85%',
+        'Location: Ecil, Hyderabad',
+        'Board: State Board of Telangana'
+      ],
       icon: GraduationCap,
     },
   ];
@@ -57,25 +76,40 @@ const Education = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ x: 10 }}
+                whileHover={{ x: 10, scale: 1.02 }}
                 className="flex gap-4 group cursor-pointer"
               >
                 <div className="flex-shrink-0">
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center border-2 border-white/20 group-hover:border-blue-400/50 transition-all duration-300"
+                    className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center border-2 border-white/20 group-hover:border-blue-400/50 transition-all duration-300 shadow-lg"
                   >
                     <item.icon className="w-6 h-6 text-white" />
                   </motion.div>
                 </div>
-                <div className="flex-1 backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-white/10 group-hover:bg-white/10 group-hover:border-blue-400/30 transition-all duration-300">
+                <div className="flex-1 backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-white/10 group-hover:bg-white/10 group-hover:border-blue-400/30 transition-all duration-300 hover:shadow-2xl">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-blue-400 font-bold text-sm bg-blue-500/20 px-3 py-1 rounded-full border border-blue-400/30">
                       {item.year}
                     </span>
                   </div>
-                  <h4 className="text-white font-semibold text-lg mb-1">{item.title}</h4>
-                  <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
+                  <h4 className="text-white font-semibold text-lg mb-2 group-hover:text-blue-400 transition-colors duration-300">
+                    {item.title}
+                  </h4>
+                  <h5 className="text-blue-200 font-medium text-base mb-3">
+                    {item.subtitle}
+                  </h5>
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                    {item.description}
+                  </p>
+                  <div className="space-y-2">
+                    {item.details.map((detail, detailIndex) => (
+                      <div key={detailIndex} className="flex items-center gap-2 text-gray-400 text-sm">
+                        <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
+                        {detail}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}

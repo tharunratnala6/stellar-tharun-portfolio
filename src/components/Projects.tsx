@@ -1,12 +1,12 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Star, Code, Zap } from 'lucide-react';
+import { Github, ExternalLink, Star, Code, Zap, Globe } from 'lucide-react';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   
-  const filters = ['All', 'AI/ML', 'Web Dev', 'Blockchain', 'IoT'];
+  const filters = ['All', 'AI/ML', 'Web Dev', 'Portfolio'];
   
   const projects = [
     {
@@ -41,11 +41,11 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: 'Smart Home IoT System',
-      description: 'Integrated IoT platform for home automation with mobile app control.',
+      title: 'Dynamic Webpage Portfolio',
+      description: 'Interactive and responsive portfolio website showcasing projects and skills with modern animations.',
       image: '/placeholder.svg',
-      tags: ['Arduino', 'React Native', 'Firebase', 'IoT'],
-      category: 'IoT',
+      tags: ['React', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
+      category: 'Portfolio',
       github: '#',
       featured: false,
     },
@@ -73,7 +73,6 @@ const Projects = () => {
           </p>
         </motion.div>
 
-
         {/* Projects Grid */}
         <motion.div
           layout
@@ -88,7 +87,7 @@ const Projects = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl group relative"
+              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl group relative hover:shadow-blue-500/25 transition-all duration-500"
             >
               {/* Featured Badge */}
               {project.featured && (
@@ -100,8 +99,12 @@ const Projects = () => {
 
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
-                  <Code className="w-16 h-16 text-white/50" />
+                <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center group-hover:from-blue-500/30 group-hover:to-purple-500/30 transition-all duration-500">
+                  {project.category === 'Portfolio' ? (
+                    <Globe className="w-16 h-16 text-white/50 group-hover:text-white/70 transition-all duration-300" />
+                  ) : (
+                    <Code className="w-16 h-16 text-white/50 group-hover:text-white/70 transition-all duration-300" />
+                  )}
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 
@@ -130,12 +133,13 @@ const Projects = () => {
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
-                    <span
+                    <motion.span
                       key={tagIndex}
-                      className="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs text-blue-200 backdrop-blur-sm"
+                      whileHover={{ scale: 1.05 }}
+                      className="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs text-blue-200 backdrop-blur-sm hover:bg-blue-500/20 hover:border-blue-400/30 transition-all duration-300"
                     >
                       {tag}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
 

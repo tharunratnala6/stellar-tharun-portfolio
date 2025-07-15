@@ -55,55 +55,57 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
-          isScrolled ? 'scale-95' : ''
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 py-2 ${
+          isScrolled ? 'bg-black/30 backdrop-blur-xl border-b border-white/10' : ''
         }`}
       >
-        <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-full px-6 py-3 shadow-2xl">
-          <div className="flex items-center gap-8">
-            {/* Logo */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
-            >
-              TR
-            </motion.div>
+        <div className="max-w-7xl mx-auto">
+          <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-full px-6 py-3 shadow-2xl">
+            <div className="flex items-center justify-between">
+              {/* Logo */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+              >
+                TR
+              </motion.div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-6">
-              {navItems.map((item) => (
-                <motion.button
-                  key={item.id}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 relative ${
-                    activeSection === item.id
-                      ? 'text-blue-400 bg-blue-400/20'
-                      : 'text-white/70 hover:text-white hover:bg-white/10'
-                  }`}
-                >
-                  {item.name}
-                  {activeSection === item.id && (
-                    <motion.div
-                      layoutId="activeIndicator"
-                      className="absolute inset-0 bg-blue-400/20 rounded-full border border-blue-400/30"
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
-                </motion.button>
-              ))}
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex items-center gap-6">
+                {navItems.map((item) => (
+                  <motion.button
+                    key={item.id}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 relative ${
+                      activeSection === item.id
+                        ? 'text-blue-400 bg-blue-400/20 shadow-lg'
+                        : 'text-white/70 hover:text-white hover:bg-white/10 hover:shadow-md'
+                    }`}
+                  >
+                    {item.name}
+                    {activeSection === item.id && (
+                      <motion.div
+                        layoutId="activeIndicator"
+                        className="absolute inset-0 bg-blue-400/20 rounded-full border border-blue-400/30"
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      />
+                    )}
+                  </motion.button>
+                ))}
+              </div>
+
+              {/* Mobile Menu Button */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden p-2 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300"
+              >
+                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </motion.button>
             </div>
-
-            {/* Mobile Menu Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-full bg-white/10 border border-white/20"
-            >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </motion.button>
           </div>
         </div>
       </motion.nav>
@@ -123,10 +125,11 @@ const Navbar = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
+                whileHover={{ x: 5, scale: 1.02 }}
                 onClick={() => scrollToSection(item.id)}
                 className={`w-full text-left px-4 py-3 rounded-xl mb-2 last:mb-0 transition-all duration-300 ${
                   activeSection === item.id
-                    ? 'text-blue-400 bg-blue-400/20'
+                    ? 'text-blue-400 bg-blue-400/20 shadow-md'
                     : 'text-white/70 hover:text-white hover:bg-white/10'
                 }`}
               >

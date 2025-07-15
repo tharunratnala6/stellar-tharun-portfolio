@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Award, ExternalLink, Calendar, Building, Download, Eye } from 'lucide-react';
@@ -191,7 +190,7 @@ const Certifications = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl group relative"
+              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl group relative hover:shadow-blue-500/25 transition-all duration-500"
             >
               {/* Certificate Header */}
               <div className="relative p-6 bg-gradient-to-br from-blue-500/10 to-purple-500/10">
@@ -203,9 +202,9 @@ const Certifications = () => {
                     <Award className="w-6 h-6 text-white" />
                   </motion.div>
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    cert.type === 'Professional' 
+                    cert.type === 'Certificate' 
                       ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                      : cert.type === 'Specialization'
+                      : cert.type === 'Internship'
                       ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30'
                       : 'bg-green-500/20 text-green-400 border border-green-500/30'
                   }`}>
@@ -238,12 +237,13 @@ const Certifications = () => {
                 <div className="mb-4">
                   <div className="flex flex-wrap gap-2">
                     {cert.skills.slice(0, 3).map((skill, skillIndex) => (
-                      <span
+                      <motion.span
                         key={skillIndex}
-                        className="px-2 py-1 bg-white/10 border border-white/20 rounded-md text-xs text-blue-200"
+                        whileHover={{ scale: 1.05 }}
+                        className="px-2 py-1 bg-white/10 border border-white/20 rounded-md text-xs text-blue-200 hover:bg-blue-500/20 hover:border-blue-400/30 transition-all duration-300"
                       >
                         {skill}
-                      </span>
+                      </motion.span>
                     ))}
                     {cert.skills.length > 3 && (
                       <span className="px-2 py-1 bg-white/10 border border-white/20 rounded-md text-xs text-gray-400">
