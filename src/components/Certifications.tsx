@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, ExternalLink, Calendar, Building, Download, Eye } from 'lucide-react';
+import { Award, Calendar, Building, Eye } from 'lucide-react';
 
 const Certifications = () => {
-  const [selectedCert, setSelectedCert] = useState(null);
-
   const certifications = [
     {
       id: 1,
@@ -100,39 +99,55 @@ const Certifications = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl group relative hover:shadow-blue-500/25 transition-all duration-500"
+              whileHover={{ 
+                y: -15, 
+                scale: 1.05, 
+                rotateX: 5,
+                rotateY: 5,
+                transition: { duration: 0.3 }
+              }}
+              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl group relative hover:shadow-blue-500/25 transition-all duration-500 cursor-pointer"
             >
+              {/* Enhanced glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+              
               {/* Certificate Header */}
-              <div className="relative p-6 bg-gradient-to-br from-blue-500/10 to-purple-500/10">
+              <div className="relative p-6 bg-gradient-to-br from-blue-500/10 to-purple-500/10 group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-500">
                 <div className="flex items-center justify-between mb-4">
                   <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="p-3 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl"
+                    whileHover={{ scale: 1.2, rotate: 15 }}
+                    transition={{ duration: 0.3 }}
+                    className="p-3 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl group-hover:shadow-lg"
                   >
                     <Award className="w-6 h-6 text-white" />
                   </motion.div>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    cert.type === 'Certificate' 
-                      ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                      : cert.type === 'Internship'
-                      ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30'
-                      : 'bg-green-500/20 text-green-400 border border-green-500/30'
-                  }`}>
+                  <motion.span 
+                    whileHover={{ scale: 1.1 }}
+                    className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      cert.type === 'Certificate' 
+                        ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                        : cert.type === 'Internship'
+                        ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30'
+                        : 'bg-green-500/20 text-green-400 border border-green-500/30'
+                    }`}
+                  >
                     {cert.type}
-                  </span>
+                  </motion.span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
+                <motion.h3 
+                  whileHover={{ scale: 1.05 }}
+                  className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300"
+                >
                   {cert.title}
-                </h3>
+                </motion.h3>
                 
-                <div className="flex items-center gap-2 text-gray-300 text-sm mb-2">
+                <div className="flex items-center gap-2 text-gray-300 text-sm mb-2 group-hover:text-blue-200 transition-colors duration-300">
                   <Building className="w-4 h-4" />
                   {cert.issuer}
                 </div>
                 
-                <div className="flex items-center gap-2 text-gray-300 text-sm">
+                <div className="flex items-center gap-2 text-gray-300 text-sm group-hover:text-blue-200 transition-colors duration-300">
                   <Calendar className="w-4 h-4" />
                   {cert.date}
                 </div>
@@ -140,7 +155,7 @@ const Certifications = () => {
 
               {/* Certificate Content */}
               <div className="p-6">
-                <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                <p className="text-gray-300 text-sm mb-4 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                   {cert.description}
                 </p>
 
@@ -150,7 +165,7 @@ const Certifications = () => {
                     {cert.skills.slice(0, 3).map((skill, skillIndex) => (
                       <motion.span
                         key={skillIndex}
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.1, y: -2 }}
                         className="px-2 py-1 bg-white/10 border border-white/20 rounded-md text-xs text-blue-200 hover:bg-blue-500/20 hover:border-blue-400/30 transition-all duration-300"
                       >
                         {skill}
@@ -164,24 +179,55 @@ const Certifications = () => {
                   </div>
                 </div>
 
-                {/* Actions - Certificate View Button with Working Link */}
+                {/* Enhanced Certificate View Button */}
                 <div className="flex gap-2">
                   <motion.a
                     href={cert.verifyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ 
+                      scale: 1.08, 
+                      boxShadow: "0 10px 25px rgba(59, 130, 246, 0.4)",
+                      y: -2
+                    }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white text-sm font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white text-sm font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer relative overflow-hidden group"
                   >
-                    <Eye className="w-4 h-4" />
-                    Certificate View
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <motion.div
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.5 }}
+                      className="relative z-10"
+                    >
+                      <Eye className="w-4 h-4" />
+                    </motion.div>
+                    <span className="relative z-10">Certificate View</span>
                   </motion.a>
                 </div>
               </div>
 
-              {/* Hover Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+              {/* Floating particles effect on hover */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                {[...Array(3)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute w-1 h-1 bg-blue-400/60 rounded-full"
+                    style={{
+                      left: `${20 + i * 30}%`,
+                      top: `${20 + i * 20}%`,
+                    }}
+                    animate={{
+                      y: [-5, -15, -5],
+                      opacity: [0.3, 0.8, 0.3],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: i * 0.3,
+                    }}
+                  />
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>

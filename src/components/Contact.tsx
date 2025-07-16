@@ -28,19 +28,25 @@ const Contact = () => {
       icon: Mail,
       title: 'Email',
       value: 'tharunratnala6@gmail.com',
-      link: 'mailto:tharunratnala6@gmail.com'
+      link: 'mailto:tharunratnala6@gmail.com',
+      color: 'group-hover:text-blue-400',
+      bgColor: 'group-hover:bg-blue-500/20'
     },
     {
       icon: Phone,
       title: 'Phone',
       value: '+91 8328515310',
-      link: 'tel:+918328515310'
+      link: 'tel:+918328515310',
+      color: 'group-hover:text-green-400',
+      bgColor: 'group-hover:bg-green-500/20'
     },
     {
       icon: MapPin,
       title: 'Location',
       value: 'Hyderabad, India',
-      link: '#'
+      link: '#',
+      color: 'group-hover:text-purple-400',
+      bgColor: 'group-hover:bg-purple-500/20'
     }
   ];
 
@@ -49,13 +55,22 @@ const Contact = () => {
       name: 'GitHub',
       icon: Github,
       url: 'https://github.com/tharunratnala6',
-      color: 'hover:text-gray-400'
+      color: 'hover:text-gray-400',
+      bgColor: 'hover:bg-gray-500/20'
     },
     {
       name: 'LinkedIn',
       icon: Linkedin,
       url: 'https://www.linkedin.com/in/tharunratnala6',
-      color: 'hover:text-blue-400'
+      color: 'hover:text-blue-400',
+      bgColor: 'hover:bg-blue-500/20'
+    },
+    {
+      name: 'Email',
+      icon: Mail,
+      url: 'mailto:tharunratnala6@gmail.com',
+      color: 'hover:text-green-400',
+      bgColor: 'hover:bg-green-500/20'
     }
   ];
 
@@ -174,15 +189,19 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ x: 10, scale: 1.02 }}
-                  className="flex items-center gap-4 p-4 backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:border-blue-400/30 transition-all duration-300 group"
+                  whileHover={{ x: 15, scale: 1.05, rotateY: 5 }}
+                  className={`flex items-center gap-4 p-4 backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:border-blue-400/30 transition-all duration-300 group ${info.bgColor}`}
                 >
-                  <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                  <motion.div 
+                    whileHover={{ scale: 1.2, rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                    className={`p-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg group-hover:scale-110 transition-transform duration-300 ${info.bgColor}`}
+                  >
                     <info.icon className="w-6 h-6 text-white" />
-                  </div>
+                  </motion.div>
                   <div>
                     <h4 className="text-white font-semibold">{info.title}</h4>
-                    <p className="text-gray-300 group-hover:text-blue-200 transition-colors duration-300">{info.value}</p>
+                    <p className={`text-gray-300 group-hover:text-blue-200 transition-colors duration-300 ${info.color}`}>{info.value}</p>
                   </div>
                   <ExternalLink className="w-4 h-4 text-gray-400 ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </motion.a>
@@ -205,9 +224,9 @@ const Contact = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileHover={{ scale: 1.2, y: -5, rotate: 10 }}
                     whileTap={{ scale: 0.9 }}
-                    className={`p-3 bg-white/10 rounded-lg border border-white/20 text-white ${social.color} transition-all duration-300 hover:shadow-lg`}
+                    className={`p-3 bg-white/10 rounded-lg border border-white/20 text-white ${social.color} ${social.bgColor} transition-all duration-300 hover:shadow-lg`}
                   >
                     <social.icon className="w-6 h-6" />
                   </motion.a>

@@ -32,29 +32,59 @@ const Hero = () => {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative px-4">
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        {/* Main Glass Panel */}
+        {/* Main Glass Panel with Enhanced Hover Effects */}
         <motion.div
           initial={{ opacity: 0, y: 50, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-12 shadow-2xl relative overflow-hidden"
+          whileHover={{ 
+            scale: 1.02, 
+            rotateX: 2, 
+            rotateY: 2,
+            transition: { duration: 0.3 }
+          }}
+          className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-12 shadow-2xl relative overflow-hidden group cursor-pointer"
         >
-          {/* Glowing borders */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-xl -z-10" />
+          {/* Enhanced Glowing borders */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-xl -z-10 group-hover:from-blue-500/30 group-hover:via-purple-500/30 group-hover:to-cyan-500/30 transition-all duration-500" />
           
-          {/* Fixed Name */}
+          {/* Floating particles effect on hover */}
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            {[...Array(6)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-2 h-2 bg-blue-400/50 rounded-full"
+                style={{
+                  left: `${20 + i * 15}%`,
+                  top: `${30 + (i % 2) * 40}%`,
+                }}
+                animate={{
+                  y: [-10, -20, -10],
+                  opacity: [0.3, 0.8, 0.3],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: i * 0.2,
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* Fixed Name with Enhanced Hover */}
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent"
+            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:via-purple-300 group-hover:to-cyan-300 transition-all duration-500"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
+            whileHover={{ scale: 1.05, textShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
           >
             Hi, I'm Tharun Ratnala
           </motion.h1>
 
           {/* Typing Animation */}
           <motion.div 
-            className="text-3xl md:text-4xl font-semibold mb-6 text-blue-200 min-h-[60px] flex items-center justify-center"
+            className="text-3xl md:text-4xl font-semibold mb-6 text-blue-200 min-h-[60px] flex items-center justify-center group-hover:text-blue-100 transition-colors duration-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
@@ -68,7 +98,7 @@ const Hero = () => {
           </motion.div>
 
           <motion.p
-            className="text-xl md:text-2xl text-blue-200 mb-8 max-w-2xl mx-auto"
+            className="text-xl md:text-2xl text-blue-200 mb-8 max-w-2xl mx-auto group-hover:text-blue-100 transition-colors duration-300"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
@@ -85,7 +115,12 @@ const Hero = () => {
           >
             <motion.button
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(59, 130, 246, 0.5)" }}
+              whileHover={{ 
+                scale: 1.08, 
+                boxShadow: "0 0 30px rgba(59, 130, 246, 0.5)",
+                rotateX: 5,
+                y: -3
+              }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-semibold border border-blue-400/30 backdrop-blur-sm relative overflow-hidden group"
             >
@@ -97,12 +132,23 @@ const Hero = () => {
               href="https://drive.google.com/file/d/17to5VpBAfQRacPXPC9gxVTHTlT5mSbZJ/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(34, 197, 94, 0.5)" }}
+              whileHover={{ 
+                scale: 1.08, 
+                boxShadow: "0 0 30px rgba(59, 130, 246, 0.6)",
+                rotateX: 5,
+                y: -3
+              }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-white/10 rounded-full text-white font-semibold border border-white/20 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2"
+              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full text-white font-semibold border border-blue-400/30 backdrop-blur-sm relative overflow-hidden group transition-all duration-300 flex items-center justify-center gap-2"
             >
-              <Download className="w-5 h-5" />
-              Download Resume
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Download className="w-5 h-5" />
+              </motion.div>
+              <span className="relative z-10">Download Resume</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.a>
           </motion.div>
 
@@ -114,15 +160,16 @@ const Hero = () => {
             transition={{ delay: 2, duration: 0.8 }}
           >
             {[
-              { icon: Github, href: "https://github.com/tharunratnala6", color: "hover:text-purple-400" },
-              { icon: Linkedin, href: "https://www.linkedin.com/in/tharunratnala6", color: "hover:text-blue-400" },
-              { icon: Mail, href: "mailto:tharunratnala6@gmail.com", color: "hover:text-green-400" }
+              { icon: Github, href: "https://github.com/tharunratnala6", color: "hover:text-purple-400", hoverBg: "hover:bg-purple-500/20" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/tharunratnala6", color: "hover:text-blue-400", hoverBg: "hover:bg-blue-500/20" },
+              { icon: Mail, href: "mailto:tharunratnala6@gmail.com", color: "hover:text-green-400", hoverBg: "hover:bg-green-500/20" }
             ].map((social, index) => (
               <motion.a
                 key={index}
                 href={social.href}
-                whileHover={{ scale: 1.2, y: -5 }}
-                className={`p-3 rounded-full bg-white/10 border border-white/20 text-white/70 transition-all duration-300 ${social.color}`}
+                whileHover={{ scale: 1.3, y: -8, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+                className={`p-3 rounded-full bg-white/10 border border-white/20 text-white/70 transition-all duration-300 ${social.color} ${social.hoverBg}`}
               >
                 <social.icon className="w-6 h-6" />
               </motion.a>
@@ -141,7 +188,8 @@ const Hero = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="p-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm"
+          whileHover={{ scale: 1.2, rotate: 180 }}
+          className="p-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm cursor-pointer hover:border-blue-400/50 transition-all duration-300"
         >
           <ChevronDown className="w-6 h-6 text-blue-400" />
         </motion.div>
