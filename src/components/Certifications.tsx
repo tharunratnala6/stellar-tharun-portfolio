@@ -7,11 +7,11 @@ const Certifications = () => {
   const certifications = [
     {
       id: 1,
-      title: 'Python',
+      title: 'Python Programming',
       issuer: 'IITM GUVI',
       date: '2024',
       type: 'Certificate',
-      description: 'Python programming fundamentals covered',
+      description: 'Mastered Python programming fundamentals including data structures, algorithms, and object-oriented programming concepts',
       skills: ['Python', 'Programming', 'Coding', 'Development'],
       verifyUrl: 'https://digitalskills.iitmpravartak.org.in/verify/cert/3z91Vi67268p2B15FG',
       status: 'Active',
@@ -22,7 +22,7 @@ const Certifications = () => {
       issuer: 'AICTE-GOOGLE',
       date: '2024',
       type: 'Internship',
-      description: 'AI ML virtual internship program',
+      description: 'Completed comprehensive AI and Machine Learning virtual internship covering neural networks, data science, and practical implementations',
       skills: ['AI', 'Machine Learning', 'Python', 'Data Science'],
       verifyUrl: 'https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=659a4a39ccd266a7406feb3fddf69e99',
       status: 'Active',
@@ -33,40 +33,40 @@ const Certifications = () => {
       issuer: 'AICTE-GOOGLE',
       date: '2024',
       type: 'Internship',
-      description: 'Android development internship program',
+      description: 'Gained hands-on experience in Android app development, UI/UX design, and mobile application lifecycle management',
       skills: ['Android', 'Java', 'Mobile Development', 'UI/UX'],
       verifyUrl: 'https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=c1ca905e0334738ad74e7c2f5dfb386e',
       status: 'Active',
     },
     {
       id: 4,
-      title: 'Core Java',
+      title: 'Core Java Programming',
       issuer: 'Certificate Provider',
       date: '2024',
       type: 'Certificate',
-      description: 'Java programming language fundamentals',
+      description: 'Demonstrated proficiency in Core Java programming including OOP principles, exception handling, and collection frameworks',
       skills: ['Java', 'OOP', 'Programming', 'Software Development'],
       verifyUrl: 'https://drive.google.com/file/d/1ey5twC_beAQluRuPQnLupKr_6o-Pag4y/view?usp=drive_link',
       status: 'Active',
     },
     {
       id: 5,
-      title: 'DeepLearning AI',
+      title: 'Deep Learning Specialization',
       issuer: 'Coursera',
       date: '2024',
       type: 'Certificate',
-      description: 'Deep learning techniques and applications',
+      description: 'Completed advanced deep learning specialization covering neural networks, CNN, RNN, and practical AI applications',
       skills: ['Deep Learning', 'Neural Networks', 'AI', 'TensorFlow'],
       verifyUrl: 'https://www.coursera.org/account/accomplishments/verify/BT98LTAYY738',
       status: 'Active',
     },
     {
       id: 6,
-      title: 'Java',
+      title: 'Java Programming',
       issuer: 'Great Learning',
       date: '2024',
       type: 'Certificate',
-      description: 'Java programming and development skills',
+      description: 'Advanced Java programming course covering enterprise-level development patterns and best practices',
       skills: ['Java', 'Programming', 'Development', 'Coding'],
       verifyUrl: 'https://www.mygreatlearning.com/certificate/YITZEJGQ',
       status: 'Active',
@@ -87,7 +87,7 @@ const Certifications = () => {
             Certifications
           </h2>
           <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-            Professional credentials validating expertise across multiple domains
+            Industry-recognized certifications demonstrating commitment to continuous learning and professional excellence
           </p>
         </motion.div>
 

@@ -51,7 +51,7 @@ const Skills = () => {
             Skills & Expertise
           </h2>
           <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-            Mastering cutting-edge technologies to build tomorrow's solutions
+            Comprehensive technical and interpersonal skills cultivated through academic projects and hands-on learning
           </p>
         </motion.div>
 

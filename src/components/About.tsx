@@ -19,7 +19,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-            Passionate about creating innovative solutions that bridge the gap between imagination and reality
+            Passionate Computer Science student eager to make a mark in the tech industry through innovation and dedication
           </p>
         </motion.div>
 

@@ -152,28 +152,64 @@ const Hero = () => {
             </motion.a>
           </motion.div>
 
-          {/* Social Links */}
+          {/* Enhanced Social Links with proper functionality */}
           <motion.div
             className="flex justify-center gap-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2, duration: 0.8 }}
           >
-            {[
-              { icon: Github, href: "https://github.com/tharunratnala6", color: "hover:text-purple-400", hoverBg: "hover:bg-purple-500/20" },
-              { icon: Linkedin, href: "https://www.linkedin.com/in/tharunratnala6", color: "hover:text-blue-400", hoverBg: "hover:bg-blue-500/20" },
-              { icon: Mail, href: "mailto:tharunratnala6@gmail.com", color: "hover:text-green-400", hoverBg: "hover:bg-green-500/20" }
-            ].map((social, index) => (
-              <motion.a
-                key={index}
-                href={social.href}
-                whileHover={{ scale: 1.3, y: -8, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-                className={`p-3 rounded-full bg-white/10 border border-white/20 text-white/70 transition-all duration-300 ${social.color} ${social.hoverBg}`}
-              >
-                <social.icon className="w-6 h-6" />
-              </motion.a>
-            ))}
+            <motion.a
+              href="https://github.com/tharunratnala6"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ 
+                scale: 1.4, 
+                y: -12, 
+                rotate: 10,
+                boxShadow: "0 10px 30px rgba(147, 51, 234, 0.4)",
+                borderColor: "rgba(147, 51, 234, 0.6)"
+              }}
+              whileTap={{ scale: 0.9 }}
+              className="p-4 rounded-full bg-white/10 border border-white/20 text-white/70 transition-all duration-300 hover:text-purple-400 hover:bg-purple-500/20 cursor-pointer relative overflow-hidden group"
+            >
+              <div className="absolute inset-0 bg-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+              <Github className="w-6 h-6 relative z-10" />
+            </motion.a>
+
+            <motion.a
+              href="https://www.linkedin.com/in/tharunratnala6"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ 
+                scale: 1.4, 
+                y: -12, 
+                rotate: -10,
+                boxShadow: "0 10px 30px rgba(59, 130, 246, 0.4)",
+                borderColor: "rgba(59, 130, 246, 0.6)"
+              }}
+              whileTap={{ scale: 0.9 }}
+              className="p-4 rounded-full bg-white/10 border border-white/20 text-white/70 transition-all duration-300 hover:text-blue-400 hover:bg-blue-500/20 cursor-pointer relative overflow-hidden group"
+            >
+              <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+              <Linkedin className="w-6 h-6 relative z-10" />
+            </motion.a>
+
+            <motion.a
+              href="mailto:tharunratnala6@gmail.com"
+              whileHover={{ 
+                scale: 1.4, 
+                y: -12, 
+                rotate: 10,
+                boxShadow: "0 10px 30px rgba(34, 197, 94, 0.4)",
+                borderColor: "rgba(34, 197, 94, 0.6)"
+              }}
+              whileTap={{ scale: 0.9 }}
+              className="p-4 rounded-full bg-white/10 border border-white/20 text-white/70 transition-all duration-300 hover:text-green-400 hover:bg-green-500/20 cursor-pointer relative overflow-hidden group"
+            >
+              <div className="absolute inset-0 bg-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+              <Mail className="w-6 h-6 relative z-10" />
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>
