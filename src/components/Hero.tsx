@@ -8,7 +8,7 @@ const Hero = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const texts = [
     "Futuristic Developer",
-    "Tech Explorer",
+    "Tech Explorer", 
     "AI Innovator",
     "Engineering Student"
   ];
@@ -152,7 +152,7 @@ const Hero = () => {
             </motion.a>
           </motion.div>
 
-          {/* Enhanced Social Links with proper functionality */}
+          {/* Working Social Links */}
           <motion.div
             className="flex justify-center gap-6"
             initial={{ opacity: 0 }}
@@ -167,11 +167,10 @@ const Hero = () => {
                 scale: 1.4, 
                 y: -12, 
                 rotate: 10,
-                boxShadow: "0 10px 30px rgba(147, 51, 234, 0.4)",
-                borderColor: "rgba(147, 51, 234, 0.6)"
+                boxShadow: "0 10px 30px rgba(147, 51, 234, 0.4)"
               }}
               whileTap={{ scale: 0.9 }}
-              className="p-4 rounded-full bg-white/10 border border-white/20 text-white/70 transition-all duration-300 hover:text-purple-400 hover:bg-purple-500/20 cursor-pointer relative overflow-hidden group"
+              className="p-4 rounded-full bg-white/10 border border-white/20 text-white/70 transition-all duration-300 hover:text-purple-400 hover:bg-purple-500/20 hover:border-purple-500/50 cursor-pointer relative overflow-hidden group"
             >
               <div className="absolute inset-0 bg-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
               <Github className="w-6 h-6 relative z-10" />
@@ -185,11 +184,10 @@ const Hero = () => {
                 scale: 1.4, 
                 y: -12, 
                 rotate: -10,
-                boxShadow: "0 10px 30px rgba(59, 130, 246, 0.4)",
-                borderColor: "rgba(59, 130, 246, 0.6)"
+                boxShadow: "0 10px 30px rgba(59, 130, 246, 0.4)"
               }}
               whileTap={{ scale: 0.9 }}
-              className="p-4 rounded-full bg-white/10 border border-white/20 text-white/70 transition-all duration-300 hover:text-blue-400 hover:bg-blue-500/20 cursor-pointer relative overflow-hidden group"
+              className="p-4 rounded-full bg-white/10 border border-white/20 text-white/70 transition-all duration-300 hover:text-blue-400 hover:bg-blue-500/20 hover:border-blue-500/50 cursor-pointer relative overflow-hidden group"
             >
               <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
               <Linkedin className="w-6 h-6 relative z-10" />
@@ -201,11 +199,10 @@ const Hero = () => {
                 scale: 1.4, 
                 y: -12, 
                 rotate: 10,
-                boxShadow: "0 10px 30px rgba(34, 197, 94, 0.4)",
-                borderColor: "rgba(34, 197, 94, 0.6)"
+                boxShadow: "0 10px 30px rgba(34, 197, 94, 0.4)"
               }}
               whileTap={{ scale: 0.9 }}
-              className="p-4 rounded-full bg-white/10 border border-white/20 text-white/70 transition-all duration-300 hover:text-green-400 hover:bg-green-500/20 cursor-pointer relative overflow-hidden group"
+              className="p-4 rounded-full bg-white/10 border border-white/20 text-white/70 transition-all duration-300 hover:text-green-400 hover:bg-green-500/20 hover:border-green-500/50 cursor-pointer relative overflow-hidden group"
             >
               <div className="absolute inset-0 bg-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
               <Mail className="w-6 h-6 relative z-10" />
