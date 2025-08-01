@@ -13,7 +13,7 @@ const Skills = () => {
     },
     {
       title: 'Web Technologies',
-      skills: ['HTML/CSS', 'Node.js'],
+      skills: ['HTML', 'CSS'],
       icon: Globe,
       color: 'from-green-500/20 to-emerald-500/20'
     },

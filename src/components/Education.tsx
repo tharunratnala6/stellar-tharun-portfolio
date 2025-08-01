@@ -11,7 +11,7 @@ const Education = () => {
       subtitle: 'BTech in Computer Science and Engineering (AI&ML)',
       description: 'Specializing in Artificial Intelligence and Machine Learning with comprehensive coursework in advanced computing technologies.',
       details: [
-        'CGPA: 7.8',
+        'CGPA: 7.7',
         'Location: Hyderabad',
         'Focus: AI/ML, Data Science, Software Engineering'
       ],
