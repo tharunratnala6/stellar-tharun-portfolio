@@ -7,7 +7,7 @@ const Skills = () => {
   const skillCategories = [
     {
       title: 'Programming Languages',
-      skills: ['Java', 'Python'],
+      skills: ['Java', 'Python', 'C'],
       icon: Code,
       color: 'from-blue-500/20 to-cyan-500/20'
     },
@@ -58,7 +58,7 @@ const Skills = () => {
         {/* Skills */}
         <div className="space-y-8">
           {/* First Row: Programming & Web Technologies */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {skillCategories.slice(0, 2).map((category, categoryIndex) => (
               <motion.div
                 key={category.title}
@@ -104,7 +104,7 @@ const Skills = () => {
           </div>
 
           {/* Second Row: Frameworks & Software Tools */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {skillCategories.slice(2, 4).map((category, categoryIndex) => (
               <motion.div
                 key={category.title}
@@ -176,7 +176,7 @@ const Skills = () => {
                     </h3>
                   </div>
                   
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3 md:gap-4">
                     {category.skills.map((skill, skillIndex) => (
                       <motion.span
                         key={skillIndex}

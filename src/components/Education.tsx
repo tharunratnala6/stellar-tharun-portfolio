@@ -13,7 +13,7 @@ const Education = () => {
       details: [
         'CGPA: 7.7',
         'Location: Hyderabad',
-        'Focus: AI/ML, Data Science, Software Engineering'
+        'Focus: AI/ML, Software Engineering and CSE core subjects'
       ],
       icon: GraduationCap,
     },
@@ -35,7 +35,7 @@ const Education = () => {
       subtitle: 'High School Education',
       description: 'Comprehensive secondary education with strong foundation in core subjects and academic excellence.',
       details: [
-        'Percentage: 85%',
+        'Percentage: 80%',
         'Location: Ecil, Hyderabad',
         'Board: State Board of Telangana'
       ],

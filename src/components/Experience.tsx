@@ -83,7 +83,7 @@ const Experience = () => {
                       whileTap={{ scale: 0.95 }}
                       className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white hover:shadow-lg transition-all duration-300 font-medium text-sm"
                     >
-                      <span>Program Certificate</span>
+                      <span>Certificate</span>
                     </motion.a>
                   </div>
                 </div>

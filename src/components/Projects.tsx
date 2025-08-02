@@ -12,7 +12,7 @@ const Projects = () => {
     {
       id: 1,
       title: 'Automated Smart Attendance System',
-      description: 'Used Python, OpenCV, and Tkinter to build a real-time face-based attendance system.',
+      description: 'Engineered an intelligent attendance management system leveraging computer vision technology. Implemented advanced facial recognition algorithms using OpenCV for real-time detection and identification. Developed an intuitive GUI interface with Tkinter for seamless user interaction and administrative control.',
       image: '/placeholder.svg',
       tags: ['Python', 'OpenCV', 'Tkinter', 'Machine Learning'],
       category: 'AI/ML',
@@ -22,7 +22,7 @@ const Projects = () => {
     {
       id: 2,
       title: 'Credit Card Fraud Detection',
-      description: 'Machine learning model to detect fraudulent transactions.',
+      description: 'Developed a sophisticated machine learning pipeline for financial fraud detection utilizing advanced algorithms and statistical analysis. Implemented feature engineering techniques, data preprocessing, and model optimization to achieve high accuracy in identifying anomalous transaction patterns while minimizing false positives.',
       image: '/placeholder.svg',
       tags: ['Python', 'Machine Learning', 'Data Science', 'Scikit-learn'],
       category: 'AI/ML',
@@ -32,7 +32,7 @@ const Projects = () => {
     {
       id: 3,
       title: 'Smart Interview Buddy',
-      description: 'Developed a mock interview platform with real-time face tracking and voice input. Implemented resume analysis dashboard for keyword and formatting suggestions. Used OpenCV for facial expression tracking and ML for behavior scoring. Deployed using Flask and integrated with a user-friendly web interface.',
+      description: 'Architected an AI-powered interview simulation platform integrating computer vision and natural language processing. Implemented real-time facial expression analysis, voice sentiment detection, and behavioral pattern recognition. Developed comprehensive resume parsing algorithms with intelligent keyword optimization and formatting recommendations for enhanced candidate preparation.',
       image: '/placeholder.svg',
       tags: ['OpenCV', 'Machine Learning', 'Flask', 'Python'],
       category: 'AI/ML',
@@ -42,7 +42,7 @@ const Projects = () => {
     {
       id: 4,
       title: 'Dynamic Webpage Portfolio',
-      description: 'Interactive and responsive portfolio website showcasing projects and skills with modern animations.',
+      description: 'Crafted a cutting-edge portfolio website featuring advanced animations, 3D transforms, and interactive elements. Implemented responsive design principles with optimized performance, accessibility standards, and modern web technologies. Showcases technical expertise through dynamic content presentation and immersive user experience.',
       image: '/placeholder.svg',
       tags: ['React', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
       category: 'Portfolio',
@@ -76,7 +76,7 @@ const Projects = () => {
         {/* Projects Grid */}
         <motion.div
           layout
-          className="grid md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 md:gap-8"
         >
           {filteredProjects.map((project, index) => (
             <motion.div

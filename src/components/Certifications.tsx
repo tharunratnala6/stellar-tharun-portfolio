@@ -41,17 +41,17 @@ const Certifications = () => {
     {
       id: 4,
       title: 'Core Java Programming',
-      issuer: 'Certificate Provider',
-      date: '2024',
+      issuer: 'NPTEL',
+      date: '2025',
       type: 'Certificate',
       description: 'Demonstrated proficiency in Core Java programming including OOP principles, exception handling, and collection frameworks',
       skills: ['Java', 'OOP', 'Programming', 'Software Development'],
-      verifyUrl: 'https://drive.google.com/file/d/1ey5twC_beAQluRuPQnLupKr_6o-Pag4y/view?usp=drive_link',
+      verifyUrl: 'https://drive.google.com/file/d/1LvjJv8hqmwo7pBi-xBB5QzcLjUomX5Es/view?usp=drive_link',
       status: 'Active',
     },
     {
       id: 5,
-      title: 'Deep Learning Specialization',
+      title: 'Deep Learning AI',
       issuer: 'Coursera',
       date: '2024',
       type: 'Certificate',
@@ -91,7 +91,7 @@ const Certifications = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 md:gap-8">
           {certifications.map((cert, index) => (
             <motion.div
               key={cert.id}
