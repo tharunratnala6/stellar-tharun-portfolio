@@ -112,6 +112,8 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                   <motion.a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     className="p-3 bg-white/20 rounded-full backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 transition-all duration-300"
@@ -147,6 +149,8 @@ const Projects = () => {
                 <div className="flex gap-4">
                   <motion.a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     className="w-full py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-center text-white font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
                   >
