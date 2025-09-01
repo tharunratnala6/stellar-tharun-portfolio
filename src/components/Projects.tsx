@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink, Star, Code, Zap, Globe } from 'lucide-react';
@@ -107,9 +106,6 @@ const Projects = () => {
                   )}
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Project Content */}
@@ -134,17 +130,18 @@ const Projects = () => {
                   ))}
                 </div>
 
-                {/* Links */}
-                <div className="flex gap-4">
+                {/* Code Button - Same style as Experience certificate button */}
+                <div className="flex justify-center">
                   <motion.a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
-                    className="w-full py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-center text-white font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white hover:shadow-lg transition-all duration-300 font-medium text-sm"
                   >
                     <Github className="w-4 h-4" />
-                    Code
+                    <span>Code</span>
                   </motion.a>
                 </div>
               </div>
