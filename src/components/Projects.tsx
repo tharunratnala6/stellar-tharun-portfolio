@@ -136,9 +136,13 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => {
+                      console.log('Button clicked!', project.github);
+                      window.open(project.github, '_blank');
+                    }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white hover:shadow-lg transition-all duration-300 font-medium text-sm"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white hover:shadow-lg transition-all duration-300 font-medium text-sm cursor-pointer z-10 relative"
                   >
                     <Github className="w-4 h-4" />
                     <span>Code</span>
