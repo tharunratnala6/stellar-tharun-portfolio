@@ -16,7 +16,7 @@ const Projects = () => {
       image: '/placeholder.svg',
       tags: ['Python', 'OpenCV', 'Tkinter', 'Machine Learning'],
       category: 'AI/ML',
-      github: '#',
+      github: 'https://github.com/tharunratnala6/SmartAttendance',
       featured: true,
     },
     {
@@ -26,7 +26,7 @@ const Projects = () => {
       image: '/placeholder.svg',
       tags: ['Python', 'Machine Learning', 'Data Science', 'Scikit-learn'],
       category: 'AI/ML',
-      github: '#',
+      github: 'https://github.com/tharunratnala6/Credit-Card-Fraud-Detection',
       featured: true,
     },
     {
@@ -36,7 +36,7 @@ const Projects = () => {
       image: '/placeholder.svg',
       tags: ['OpenCV', 'Machine Learning', 'Flask', 'Python'],
       category: 'AI/ML',
-      github: '#',
+      github: 'https://github.com/tharunratnala6/smartinterview-buddy-37',
       featured: false,
     },
     {
@@ -46,7 +46,7 @@ const Projects = () => {
       image: '/placeholder.svg',
       tags: ['React', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
       category: 'Portfolio',
-      github: '#',
+      github: 'https://tharunratnala-portfolio.lovable.app/',
       featured: false,
     },
   ];
