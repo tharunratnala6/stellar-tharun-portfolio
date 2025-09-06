@@ -34,9 +34,9 @@ const Hero = () => {
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Main Glass Panel with Enhanced Hover Effects */}
         <motion.div
-          initial={{ opacity: 0, y: 50, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           whileHover={{ 
             scale: 1.02, 
             rotateX: 2, 
@@ -84,17 +84,19 @@ const Hero = () => {
 
           {/* Typing Animation */}
           <motion.div 
-            className="text-3xl md:text-4xl font-semibold mb-6 text-blue-200 min-h-[60px] flex items-center justify-center group-hover:text-blue-100 transition-colors duration-300"
+            className="text-3xl md:text-4xl font-semibold mb-6 text-blue-200 h-[60px] md:h-[72px] flex items-center justify-center group-hover:text-blue-100 transition-colors duration-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
-            <span>{displayedText}</span>
-            <motion.span
-              className="inline-block w-1 h-8 bg-blue-400 ml-2"
-              animate={{ opacity: [0, 1, 0] }}
-              transition={{ duration: 1, repeat: Infinity }}
-            />
+            <div className="flex items-center justify-center w-full">
+              <span className="inline-block text-center" style={{ minWidth: '280px' }}>{displayedText}</span>
+              <motion.span
+                className="inline-block w-1 h-8 bg-blue-400 ml-2 flex-shrink-0"
+                animate={{ opacity: [0, 1, 0] }}
+                transition={{ duration: 1, repeat: Infinity }}
+              />
+            </div>
           </motion.div>
 
           <motion.p
