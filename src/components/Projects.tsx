@@ -130,7 +130,7 @@ const Projects = () => {
                   ))}
                 </div>
 
-                {/* Code Button - Same style as Experience certificate button */}
+                {/* Code Button - Bigger and more visible */}
                 <div className="flex justify-center">
                   <motion.a
                     href={project.github}
@@ -138,10 +138,10 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white hover:shadow-lg transition-all duration-300 font-medium text-sm cursor-pointer z-50 relative"
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl text-white hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 font-semibold text-base cursor-pointer z-50 relative"
                   >
-                    <Github className="w-4 h-4" />
-                    <span>Code</span>
+                    <Github className="w-5 h-5" />
+                    <span>View Code</span>
                   </motion.a>
                 </div>
               </div>
