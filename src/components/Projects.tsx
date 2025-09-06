@@ -141,7 +141,7 @@ const Projects = () => {
                     className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl text-white hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 font-semibold text-base cursor-pointer z-50 relative"
                   >
                     <Github className="w-5 h-5" />
-                    <span>View Code</span>
+                    <span>Code</span>
                   </motion.a>
                 </div>
               </div>
