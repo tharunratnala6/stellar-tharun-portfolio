@@ -2,10 +2,10 @@ import React, { Suspense, lazy } from 'react';
 import FloatingElements from '../components/FloatingElements';
 import Navbar from '../components/Navbar';
 import ScrollProgress from '../components/ScrollProgress';
+import Hero from '../components/Hero';
+import About from '../components/About';
 
-// Lazy load heavy components to reduce initial bundle size
-const Hero = lazy(() => import('../components/Hero'));
-const About = lazy(() => import('../components/About'));
+// Lazy load below-the-fold components to reduce initial bundle size
 const Education = lazy(() => import('../components/Education'));
 const Projects = lazy(() => import('../components/Projects'));
 const Experience = lazy(() => import('../components/Experience'));
@@ -30,9 +30,9 @@ const Index = () => {
       
       {/* Main Content */}
       <main className="relative z-10">
+        <Hero />
+        <About />
         <Suspense fallback={<div className="min-h-screen" />}>
-          <Hero />
-          <About />
           <Education />
           <Projects />
           <Experience />
