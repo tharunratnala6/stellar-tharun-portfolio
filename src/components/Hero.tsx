@@ -99,14 +99,11 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          <motion.p
+          <p 
             className="text-xl md:text-2xl text-blue-200 mb-8 max-w-2xl mx-auto group-hover:text-blue-100 transition-colors duration-300"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
           >
             Final Year Engineering Student crafting the future with code, AI, and innovation
-          </motion.p>
+          </p>
 
           {/* CTA Buttons */}
           <motion.div
