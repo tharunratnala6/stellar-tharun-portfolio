@@ -29,6 +29,26 @@
       })();
     </script>
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+    
+    <!-- Make CSS non-render-blocking to improve LCP -->
+    <script>
+      (function() {
+        var observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            mutation.addedNodes.forEach(function(node) {
+              if (node.tagName === 'LINK' && node.rel === 'stylesheet' && node.href.indexOf('index-') !== -1) {
+                node.media = 'print';
+                node.onload = function() {
+                  this.onload = null;
+                  this.media = 'all';
+                };
+              }
+            });
+          });
+        });
+        observer.observe(document.head, { childList: true, subtree: true });
+      })();
+    </script>
   </head>
 
   <body>
