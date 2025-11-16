@@ -1,10 +1,10 @@
 import React, { Suspense, lazy } from 'react';
-import FloatingElements from '../components/FloatingElements';
 import Navbar from '../components/Navbar';
-import ScrollProgress from '../components/ScrollProgress';
 import Hero from '../components/Hero';
 
-// Lazy load below-the-fold components to reduce initial bundle size
+// Lazy load non-critical components to reduce initial bundle size
+const FloatingElements = lazy(() => import('../components/FloatingElements'));
+const ScrollProgress = lazy(() => import('../components/ScrollProgress'));
 const About = lazy(() => import('../components/About'));
 const Education = lazy(() => import('../components/Education'));
 const Projects = lazy(() => import('../components/Projects'));
@@ -19,19 +19,15 @@ const Index = () => {
       <div className="fixed inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(56,189,248,0.3),rgba(0,0,0,0))]" />
       <div className="fixed inset-0 bg-[radial-gradient(ellipse_80%_80%_at_80%_80%,rgba(147,51,234,0.2),rgba(0,0,0,0))]" />
       
-      {/* Floating Background Elements */}
-      <FloatingElements />
-      
       {/* Navigation */}
       <Navbar />
-      
-      {/* Scroll Progress */}
-      <ScrollProgress />
       
       {/* Main Content */}
       <main className="relative z-10">
         <Hero />
-        <Suspense fallback={<div className="min-h-screen" />}>
+        <Suspense fallback={null}>
+          <FloatingElements />
+          <ScrollProgress />
           <About />
           <Education />
           <Projects />
