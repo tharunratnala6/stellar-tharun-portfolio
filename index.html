@@ -30,24 +30,33 @@
     </script>
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
     
-    <!-- Make CSS non-render-blocking to improve LCP -->
+    <!-- Load critical styles inline for instant render -->
+    <style id="critical-css">
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: Inter, system-ui, sans-serif; }
+      #root { min-height: 100vh; }
+    </style>
+    
+    <!-- Make CSS non-render-blocking -->
     <script>
-      (function() {
-        var observer = new MutationObserver(function(mutations) {
-          mutations.forEach(function(mutation) {
-            mutation.addedNodes.forEach(function(node) {
-              if (node.tagName === 'LINK' && node.rel === 'stylesheet' && node.href.indexOf('index-') !== -1) {
-                node.media = 'print';
-                node.onload = function() {
-                  this.onload = null;
-                  this.media = 'all';
-                };
-              }
-            });
-          });
-        });
-        observer.observe(document.head, { childList: true, subtree: true });
-      })();
+      !function(){
+        var e=document.getElementsByTagName("link");
+        function t(){
+          for(var n=0;n<e.length;n++){
+            var o=e[n];
+            if("stylesheet"===o.rel&&o.href.indexOf("index-")!==-1&&"print"!==o.media){
+              o.media="print";
+              o.onload=function(){this.media="all"};
+              o.onerror=function(){this.media="all"};
+            }
+          }
+        }
+        if(document.readyState!=="loading"){
+          t();
+        }
+        var n=new MutationObserver(function(){t()});
+        n.observe(document.head,{childList:!0,subtree:!0});
+      }();
     </script>
   </head>
 
