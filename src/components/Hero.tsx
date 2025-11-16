@@ -34,8 +34,8 @@ const Hero = () => {
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Main Glass Panel with Enhanced Hover Effects */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ scale: 0.98 }}
+          animate={{ scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           whileHover={{ 
             scale: 1.02, 
@@ -74,9 +74,6 @@ const Hero = () => {
           {/* Fixed Name with Enhanced Hover */}
           <motion.h1 
             className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:via-purple-300 group-hover:to-cyan-300 transition-all duration-500"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
             whileHover={{ scale: 1.05, textShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
           >
             Hi, I'm Tharun Ratnala
@@ -85,9 +82,6 @@ const Hero = () => {
           {/* Typing Animation */}
           <motion.div 
             className="text-3xl md:text-4xl font-semibold mb-6 text-blue-200 h-[60px] md:h-[72px] flex items-center justify-center group-hover:text-blue-100 transition-colors duration-300"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
           >
             <div className="flex items-center justify-center w-full">
               <span className="inline-block text-center" style={{ minWidth: '280px' }}>{displayedText}</span>
