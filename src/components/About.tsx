@@ -105,6 +105,7 @@ const About = () => {
                 <img 
                   src="/lovable-uploads/a030de20-78ad-4023-8909-f0791d731c10.png" 
                   alt="Tharun Ratnala" 
+                  fetchPriority="high"
                   className="w-full h-full object-cover rounded-full transition-transform duration-500 hover:scale-110"
                 />
               </div>
