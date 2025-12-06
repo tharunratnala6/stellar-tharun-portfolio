@@ -63,7 +63,7 @@ const Experience = () => {
                 <div className="flex-1 backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-white/10 group-hover:bg-white/10 group-hover:border-blue-400/30 transition-all duration-300">
                   <div className="flex items-start justify-between mb-3">
                     <div>
-                      <h4 className="text-white font-semibold text-lg mb-1">{experience.title}</h4>
+                      <h3 className="text-white font-semibold text-lg mb-1">{experience.title}</h3>
                       <p className="text-blue-400 font-medium">{experience.company}</p>
                       <p className="text-purple-400 font-medium">{experience.role}</p>
                     </div>
