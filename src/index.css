@@ -102,4 +102,9 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Prevent deprecated H1UserAgentFontSizeInSection behavior */
+  h1 {
+    font-size: revert-layer;
+  }
 }
