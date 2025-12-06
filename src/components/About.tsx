@@ -106,8 +106,8 @@ const About = () => {
                 <img 
                   src={profilePhoto} 
                   alt="Tharun Ratnala" 
-                  width={600}
-                  height={600}
+                  width={320}
+                  height={320}
                   fetchPriority="high"
                   loading="eager"
                   decoding="async"
