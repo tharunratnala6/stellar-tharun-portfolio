@@ -156,6 +156,7 @@ const Hero = () => {
               href="https://github.com/tharunratnala6"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub Profile"
               whileHover={{ 
                 scale: 1.4, 
                 y: -12, 
@@ -173,6 +174,7 @@ const Hero = () => {
               href="https://www.linkedin.com/in/tharunratnala6"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
               whileHover={{ 
                 scale: 1.4, 
                 y: -12, 
@@ -188,6 +190,7 @@ const Hero = () => {
 
             <motion.a
               href="mailto:tharunratnala6@gmail.com"
+              aria-label="Send Email"
               whileHover={{ 
                 scale: 1.4, 
                 y: -12, 
