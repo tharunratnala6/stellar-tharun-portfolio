@@ -271,6 +271,7 @@ const Contact = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={social.name}
                     whileHover={{ scale: 1.2, y: -5, rotate: 10 }}
                     whileTap={{ scale: 0.9 }}
                     className={`p-3 bg-white/10 rounded-lg border border-white/20 text-white ${social.color} ${social.bgColor} transition-all duration-300 hover:shadow-lg`}
