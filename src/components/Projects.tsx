@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink, Star, Code, Zap, Globe } from 'lucide-react';
+import projectAttendance from '@/assets/project-attendance.webp';
+import projectFraud from '@/assets/project-fraud.webp';
+import projectInterview from '@/assets/project-interview.webp';
+import projectPortfolio from '@/assets/project-portfolio.webp';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -12,7 +16,7 @@ const Projects = () => {
       id: 1,
       title: 'Automated Smart Attendance System',
       description: 'Engineered an intelligent attendance management system leveraging computer vision technology. Implemented advanced facial recognition algorithms using OpenCV for real-time detection and identification. Developed an intuitive GUI interface with Tkinter for seamless user interaction and administrative control.',
-      image: '/placeholder.svg',
+      image: projectAttendance,
       tags: ['Python', 'OpenCV', 'Tkinter', 'Machine Learning'],
       category: 'AI/ML',
       github: 'https://github.com/tharunratnala6/SmartAttendance',
@@ -22,7 +26,7 @@ const Projects = () => {
       id: 2,
       title: 'Credit Card Fraud Detection',
       description: 'Developed a sophisticated machine learning pipeline for financial fraud detection utilizing advanced algorithms and statistical analysis. Implemented feature engineering techniques, data preprocessing, and model optimization to achieve high accuracy in identifying anomalous transaction patterns while minimizing false positives.',
-      image: '/placeholder.svg',
+      image: projectFraud,
       tags: ['Python', 'Machine Learning', 'Data Science', 'Scikit-learn'],
       category: 'AI/ML',
       github: 'https://github.com/tharunratnala6/Credit-Card-Fraud-Detection',
@@ -32,7 +36,7 @@ const Projects = () => {
       id: 3,
       title: 'Smart Interview Buddy',
       description: 'Architected an AI-powered interview simulation platform integrating computer vision and natural language processing. Implemented real-time facial expression analysis, voice sentiment detection, and behavioral pattern recognition. Developed comprehensive resume parsing algorithms with intelligent keyword optimization and formatting recommendations for enhanced candidate preparation.',
-      image: '/placeholder.svg',
+      image: projectInterview,
       tags: ['OpenCV', 'Machine Learning', 'Flask', 'Python'],
       category: 'AI/ML',
       github: 'https://github.com/tharunratnala6/smartinterview-buddy-37',
@@ -42,7 +46,7 @@ const Projects = () => {
       id: 4,
       title: 'Dynamic Webpage Portfolio',
       description: 'Crafted a cutting-edge portfolio website featuring advanced animations, 3D transforms, and interactive elements. Implemented responsive design principles with optimized performance, accessibility standards, and modern web technologies. Showcases technical expertise through dynamic content presentation and immersive user experience.',
-      image: '/placeholder.svg',
+      image: projectPortfolio,
       tags: ['React', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
       category: 'Portfolio',
       github: 'https://tharunratnala-portfolio.lovable.app/',
@@ -98,14 +102,12 @@ const Projects = () => {
 
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center group-hover:from-blue-500/30 group-hover:to-purple-500/30 transition-all duration-500">
-                  {project.category === 'Portfolio' ? (
-                    <Globe className="w-16 h-16 text-white/50 group-hover:text-white/70 transition-all duration-300" />
-                  ) : (
-                    <Code className="w-16 h-16 text-white/50 group-hover:text-white/70 transition-all duration-300" />
-                  )}
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               </div>
 
               {/* Project Content */}
