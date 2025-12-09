@@ -92,13 +92,6 @@ const Projects = () => {
               whileHover={{ y: -10, scale: 1.02 }}
               className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl group relative hover:shadow-blue-500/25 transition-all duration-500"
             >
-              {/* Featured Badge */}
-              {project.featured && (
-                <div className="absolute top-4 right-4 z-10 px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full text-xs font-bold text-white flex items-center gap-1">
-                  <Star className="w-3 h-3" />
-                  Featured
-                </div>
-              )}
 
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
