@@ -78,7 +78,7 @@ const Navbar = () => {
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => scrollToSection(item.id)}
-                    className={`px-4 py-3 rounded-full text-sm font-medium transition-all duration-300 relative min-h-[24px] ${
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 relative min-h-[32px] flex items-center ${
                       activeSection === item.id
                         ? 'text-blue-400 bg-blue-400/20 shadow-lg'
                         : 'text-white/70 hover:text-white hover:bg-white/10 hover:shadow-md'
@@ -101,7 +101,7 @@ const Navbar = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden p-2 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300"
+                className="md:hidden p-3 min-h-[44px] min-w-[44px] rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300 flex items-center justify-center"
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

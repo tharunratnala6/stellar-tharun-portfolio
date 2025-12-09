@@ -115,7 +115,7 @@ const Hero = () => {
                 y: -3
               }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-semibold border border-blue-400/30 backdrop-blur-sm relative overflow-hidden group"
+              className="px-8 py-4 min-h-[48px] bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-semibold border border-blue-400/30 backdrop-blur-sm relative overflow-hidden group"
             >
               <span className="relative z-10">About Me</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -132,7 +132,7 @@ const Hero = () => {
                 y: -3
               }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full text-white font-semibold border border-blue-400/30 backdrop-blur-sm relative overflow-hidden group transition-all duration-300 flex items-center justify-center gap-2"
+              className="px-8 py-4 min-h-[48px] bg-gradient-to-r from-blue-600 to-blue-700 rounded-full text-white font-semibold border border-blue-400/30 backdrop-blur-sm relative overflow-hidden group transition-all duration-300 flex items-center justify-center gap-2"
             >
               <motion.div
                 whileHover={{ rotate: 360 }}
