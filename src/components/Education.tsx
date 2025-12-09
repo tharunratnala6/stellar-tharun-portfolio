@@ -98,9 +98,9 @@ const Education = () => {
                   <h3 className="text-white font-bold text-xl mb-2 group-hover:text-blue-400 transition-colors duration-300 pr-24">
                     {item.title}
                   </h3>
-                  <h5 className="text-blue-200 font-medium text-base mb-3">
+                  <h4 className="text-blue-200 font-medium text-base mb-3">
                     {item.subtitle}
-                  </h5>
+                  </h4>
                   <p className="text-gray-300 text-sm leading-relaxed mb-4">
                     {item.description}
                   </p>
