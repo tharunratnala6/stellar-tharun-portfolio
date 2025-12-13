@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
-const profilePhoto = '/images/profile-photo-small.webp';
+const profilePhoto = '/images/profile-photo-320.webp';
 
 const About = () => {
 
