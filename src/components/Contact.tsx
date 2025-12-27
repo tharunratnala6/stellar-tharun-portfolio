@@ -1,15 +1,44 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, ExternalLink, Loader2 } from 'lucide-react';
-import { z } from 'zod';
-import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 
-const contactSchema = z.object({
-  name: z.string().trim().min(1, 'Name is required').max(100, 'Name must be less than 100 characters'),
-  email: z.string().email('Invalid email address').max(255, 'Email must be less than 255 characters'),
-  message: z.string().trim().min(1, 'Message is required').max(1000, 'Message must be less than 1000 characters')
-});
+// Simple email regex for basic validation
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+type FormErrors = Record<string, string>;
+
+const validateForm = (data: { name: string; email: string; message: string }): { success: boolean; errors: FormErrors; data: typeof data } => {
+  const errors: FormErrors = {};
+  const trimmedName = data.name.trim();
+  const trimmedMessage = data.message.trim();
+  
+  if (!trimmedName) {
+    errors.name = 'Name is required';
+  } else if (trimmedName.length > 100) {
+    errors.name = 'Name must be less than 100 characters';
+  }
+  
+  if (!data.email) {
+    errors.email = 'Email is required';
+  } else if (!emailRegex.test(data.email)) {
+    errors.email = 'Invalid email address';
+  } else if (data.email.length > 255) {
+    errors.email = 'Email must be less than 255 characters';
+  }
+  
+  if (!trimmedMessage) {
+    errors.message = 'Message is required';
+  } else if (trimmedMessage.length > 1000) {
+    errors.message = 'Message must be less than 1000 characters';
+  }
+  
+  return {
+    success: Object.keys(errors).length === 0,
+    errors,
+    data: { name: trimmedName, email: data.email, message: trimmedMessage }
+  };
+};
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -40,16 +69,10 @@ const Contact = () => {
     e.preventDefault();
     
     // Client-side validation first
-    const result = contactSchema.safeParse(formData);
+    const result = validateForm(formData);
     
     if (!result.success) {
-      const newErrors: Record<string, string> = {};
-      result.error.errors.forEach(err => {
-        if (err.path[0]) {
-          newErrors[err.path[0] as string] = err.message;
-        }
-      });
-      setErrors(newErrors);
+      setErrors(result.errors);
       return;
     }
     
@@ -57,6 +80,9 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
+      // Dynamically import supabase only when submitting
+      const { supabase } = await import('@/integrations/supabase/client');
+      
       // Submit to edge function with server-side validation
       const { data, error } = await supabase.functions.invoke('contact-form', {
         body: result.data
