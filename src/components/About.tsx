@@ -2,7 +2,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
-const profilePhoto = '/images/profile-photo-compressed.webp';
+const profilePhotoSmall = '/images/profile-photo-320.webp';
+const profilePhotoLarge = '/images/profile-photo-compressed.webp';
 
 const About = () => {
 
@@ -104,7 +105,9 @@ const About = () => {
             >
               <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-800 to-slate-700 flex items-center justify-center overflow-hidden">
                 <img 
-                  src={profilePhoto} 
+                  src={profilePhotoSmall}
+                  srcSet={`${profilePhotoSmall} 320w, ${profilePhotoLarge} 1024w`}
+                  sizes="320px"
                   alt="Tharun Ratnala" 
                   width={320}
                   height={320}
