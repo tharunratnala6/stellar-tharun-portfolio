@@ -71,7 +71,7 @@ const Navbar = () => {
               </motion.div>
 
               {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center gap-6">
+              <div className="hidden md:flex items-center gap-2">
                 {navItems.map((item) => (
                   <motion.button
                     key={item.id}
