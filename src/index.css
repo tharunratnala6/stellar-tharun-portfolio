@@ -108,3 +108,20 @@ All colors MUST be HSL.
     font-size: revert-layer;
   }
 }
+
+/* CSS animation for floating particles - more performant than JS */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(-20px);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(20px);
+    opacity: 0.8;
+  }
+}
+
+.animate-float {
+  animation: float ease-in-out infinite;
+  will-change: transform, opacity;
+}
