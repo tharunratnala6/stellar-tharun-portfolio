@@ -7,9 +7,6 @@ const Hero = () => {
   const [displayedText, setDisplayedText] = useState('');
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const texts = [
-    "Futuristic Developer",
-    "Tech Explorer", 
-    "AI Innovator",
     "Engineering Student"
   ];
 
