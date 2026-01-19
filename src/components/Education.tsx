@@ -11,7 +11,7 @@ const Education = () => {
       subtitle: 'BTech in Computer Science and Engineering (AI&ML)',
       description: 'Specializing in Artificial Intelligence and Machine Learning with comprehensive coursework in advanced computing technologies.',
       details: [
-        'CGPA: 7.5',
+        'CGPA: 7.38',
         'Location: Hyderabad',
         'Focus: AI/ML, Software Engineering and CSE core subjects'
       ],
@@ -35,7 +35,7 @@ const Education = () => {
       subtitle: 'High School Education',
       description: 'Comprehensive secondary education with strong foundation in core subjects and academic excellence.',
       details: [
-        'Percentage: 80%',
+        'Percentage: 78%',
         'Location: Ecil, Hyderabad',
         'Board: State Board of Telangana'
       ],
