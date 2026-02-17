@@ -114,7 +114,7 @@ const About = () => {
                   fetchPriority="high"
                   loading="eager"
                   decoding="async"
-                  className="w-full h-full object-cover rounded-full transition-transform duration-500 hover:scale-110"
+                  className="w-full h-full object-cover rounded-full scale-110 transition-transform duration-500 hover:scale-125"
                 />
               </div>
             </motion.div>
