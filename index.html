@@ -36,32 +36,9 @@
     
     <!-- Load critical styles inline for instant render -->
     <style id="critical-css">
-      * { box-sizing: border-box; margin: 0; padding: 0; }
       body { font-family: Inter, system-ui, sans-serif; }
       #root { min-height: 100vh; }
     </style>
-    
-    <!-- Make CSS non-render-blocking -->
-    <script>
-      !function(){
-        var e=document.getElementsByTagName("link");
-        function t(){
-          for(var n=0;n<e.length;n++){
-            var o=e[n];
-            if("stylesheet"===o.rel&&o.href.indexOf("index-")!==-1&&"print"!==o.media){
-              o.media="print";
-              o.onload=function(){this.media="all"};
-              o.onerror=function(){this.media="all"};
-            }
-          }
-        }
-        if(document.readyState!=="loading"){
-          t();
-        }
-        var n=new MutationObserver(function(){t()});
-        n.observe(document.head,{childList:!0,subtree:!0});
-      }();
-    </script>
     <meta property="og:title" content="Tharun Ratnala">
   <meta name="twitter:title" content="Tharun Ratnala">
   <meta property="og:description" content="Final Year Engineering Student | AI Innovator | Full Stack Developer | Building Tomorrow&#39;s Technology Today">
