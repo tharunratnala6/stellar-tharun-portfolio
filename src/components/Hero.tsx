@@ -4,17 +4,37 @@ import { motion } from 'framer-motion';
 import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
+  const roles = [
+    "Engineering Student",
+    "Aspiring Software Engineer",
+    "AI & ML Enthusiast",
+    "Problem Solver",
+    "Java Developer",
+  ];
+  const [roleIndex, setRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
-  const text = "Engineering Student";
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    if (displayedText.length < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText(text.slice(0, displayedText.length + 1));
-      }, 100);
+    const currentRole = roles[roleIndex];
+    if (!isDeleting && displayedText === currentRole) {
+      const timeout = setTimeout(() => setIsDeleting(true), 1500);
       return () => clearTimeout(timeout);
     }
-  }, [displayedText]);
+    if (isDeleting && displayedText === '') {
+      setIsDeleting(false);
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+      return;
+    }
+    const timeout = setTimeout(() => {
+      setDisplayedText((prev) =>
+        isDeleting
+          ? currentRole.slice(0, prev.length - 1)
+          : currentRole.slice(0, prev.length + 1)
+      );
+    }, isDeleting ? 50 : 100);
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, roleIndex]);
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative px-4">
