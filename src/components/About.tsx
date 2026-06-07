@@ -21,7 +21,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-            Passionate Computer Science student eager to make a mark in the tech industry through innovation and dedication
+            Computer Science (AI & ML) Graduate passionate about software engineering, artificial intelligence, and building impactful solutions.
           </p>
         </motion.div>
 
