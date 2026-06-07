@@ -84,7 +84,7 @@ const Hero = () => {
             style={{ fontSize: 'clamp(3rem, 8vw, 4.5rem)' }}
             whileHover={{ scale: 1.05, textShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
           >
-            Hi, I'm Tharun Ratnala
+            Hi, I'm Tharun Kumar Ratnala
           </motion.h1>
 
           {/* Typing Animation */}
