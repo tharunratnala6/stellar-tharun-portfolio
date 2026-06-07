@@ -6,11 +6,29 @@ import { Briefcase, Calendar, MapPin } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: 'AI Transformative Learning Program',
-      company: 'Microsoft & SAP',
-      role: 'Developer Intern',
-      duration: 'Dec 2024 – Jan 2025',
-      description: 'Built a Streamlit-based interactive chatbot with dynamic responses.',
+      title: 'Infosys Springboard – Full Stack Development Trainee (Virtual Internship)',
+      company: 'Infosys Springboard',
+      role: 'Full Stack Development Trainee',
+      duration: 'Feb 2026 – Apr 2026',
+      description: `Developed an Insurance Comparison and Claim Assistant platform in a collaborative team environment.
+Built authentication functionality using React.js frontend and FastAPI backend.
+Designed PostgreSQL database schema for secure user authentication and user management.
+Integrated frontend, backend, and database components to create a complete login and authentication system.
+Gained hands-on experience in full-stack application development and API integration.`,
+      certificateLink: 'https://drive.google.com/file/d/1SPqlTjYlVrdmXPg3YSY_aUn2B5WE4p87/view?usp=sharing',
+      icon: Briefcase,
+    },
+    {
+      title: 'CSIR Fourth Paradigm Institute (CSIR-4PI)',
+      company: 'CSIR Fourth Paradigm Institute (CSIR-4PI)',
+      role: 'AI & Computer Vision Intern',
+      duration: 'Oct 2025 – Jan 2026',
+      description: `Worked on driver behavior detection using CNN-based deep learning models.
+Studied computer vision pipelines for analyzing driver actions from video data.
+Performed data preprocessing, model training, validation, and evaluation.
+Assisted in testing, documentation, and performance analysis of AI models.
+Gained practical experience in Artificial Intelligence, Deep Learning, and Computer Vision.`,
+      certificateLink: '',
       icon: Briefcase,
     },
   ];
@@ -71,21 +89,23 @@ const Experience = () => {
                       {experience.duration}
                     </span>
                   </div>
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4">{experience.description}</p>
+                  <div className="text-gray-300 text-sm leading-relaxed mb-4 whitespace-pre-line">{experience.description}</div>
                   
-                  {/* Certificate Button - Bigger and more visible */}
-                  <div className="flex justify-center">
-                    <motion.a
-                      href="https://drive.google.com/file/d/1iGudUcHqYbn1-bsuxbom94eecyWE9BG1/view?usp=drive_link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl text-white hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 font-semibold text-base"
-                    >
-                      <span>View Certificate</span>
-                    </motion.a>
-                  </div>
+                  {/* Certificate Button */}
+                  {experience.certificateLink && (
+                    <div className="flex justify-center">
+                      <motion.a
+                        href={experience.certificateLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl text-white hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 font-semibold text-base"
+                      >
+                        <span>View Certificate</span>
+                      </motion.a>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
