@@ -85,7 +85,7 @@ Gained practical experience in Artificial Intelligence, Deep Learning, and Compu
                       <p className="text-blue-400 font-medium">{experience.company}</p>
                       <p className="text-purple-400 font-medium">{experience.role}</p>
                     </div>
-                    <span className="text-blue-400 font-bold text-sm bg-blue-500/20 px-3 py-1 rounded-full border border-blue-400/30">
+                    <span className="text-blue-400 font-bold text-sm bg-blue-500/20 px-3 py-1 rounded-full border border-blue-400/30 whitespace-nowrap">
                       {experience.duration}
                     </span>
                   </div>
