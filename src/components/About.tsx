@@ -63,9 +63,7 @@ const About = () => {
                 whileHover={{ scale: 1.01 }}
                 className="text-gray-300 leading-relaxed mb-6 relative z-10 transition-all duration-300"
               >
-                I'm a motivated Computer Science Engineering student passionate about learning and delivering quality results. With
-                strong organizational skills and a growth mindset, I'm eager to take on new challenges and gain hands-on experience
-                through internships and real-world projects. Excited for my first work opportunity—let's create something great!
+                I'm a motivated Computer Science Engineering (AI & ML) graduate passionate about learning, building innovative solutions, and delivering quality results. With strong problem-solving skills, a growth mindset, and hands-on experience in software development, AI/ML, and full-stack technologies, I enjoy tackling new challenges and creating real-world applications. Excited to start my professional journey and contribute to impactful technology solutions—let's create something great!
               </motion.p>
 
               {/* Resume Button */}
