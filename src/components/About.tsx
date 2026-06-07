@@ -55,7 +55,7 @@ const About = () => {
                 whileHover={{ x: 5 }}
                 className="text-blue-200 text-xl mb-6 relative z-10 transition-all duration-300"
               >
-                Final Year Engineering Student
+                B.Tech Graduate | Software Engineer
               </motion.p>
               
               {/* Bio */}
