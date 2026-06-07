@@ -21,7 +21,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-            Passionate Computer Science student eager to make a mark in the tech industry through innovation and dedication
+            Computer Science (AI & ML) Graduate passionate about software engineering, artificial intelligence, and building impactful solutions.
           </p>
         </motion.div>
 
@@ -55,7 +55,7 @@ const About = () => {
                 whileHover={{ x: 5 }}
                 className="text-blue-200 text-xl mb-6 relative z-10 transition-all duration-300"
               >
-                Final Year Engineering Student
+                B.Tech Graduate | Software Engineer
               </motion.p>
               
               {/* Bio */}
@@ -63,14 +63,12 @@ const About = () => {
                 whileHover={{ scale: 1.01 }}
                 className="text-gray-300 leading-relaxed mb-6 relative z-10 transition-all duration-300"
               >
-                I'm a motivated Computer Science Engineering student passionate about learning and delivering quality results. With
-                strong organizational skills and a growth mindset, I'm eager to take on new challenges and gain hands-on experience
-                through internships and real-world projects. Excited for my first work opportunity—let's create something great!
+                I'm a motivated Computer Science Engineering (AI & ML) graduate passionate about learning, building innovative solutions, and delivering quality results. With strong problem-solving skills, a growth mindset, and hands-on experience in software development, AI/ML, and full-stack technologies, I enjoy tackling new challenges and creating real-world applications. Excited to start my professional journey and contribute to impactful technology solutions—let's create something great!
               </motion.p>
 
               {/* Resume Button */}
               <motion.a
-                href="https://drive.google.com/file/d/1odTSORO2sVg73G2JeZ7k8wIm2MFhi5sy/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1TlA2l5tkWO8kqEMhQkSd4lKgBEa6py8b/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ 

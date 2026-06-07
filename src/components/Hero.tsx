@@ -4,17 +4,37 @@ import { motion } from 'framer-motion';
 import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
+  const roles = [
+    "Engineering Student",
+    "Aspiring Software Engineer",
+    "AI & ML Enthusiast",
+    "Problem Solver",
+    "Java Developer",
+  ];
+  const [roleIndex, setRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
-  const text = "Engineering Student";
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    if (displayedText.length < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText(text.slice(0, displayedText.length + 1));
-      }, 100);
+    const currentRole = roles[roleIndex];
+    if (!isDeleting && displayedText === currentRole) {
+      const timeout = setTimeout(() => setIsDeleting(true), 1500);
       return () => clearTimeout(timeout);
     }
-  }, [displayedText]);
+    if (isDeleting && displayedText === '') {
+      setIsDeleting(false);
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+      return;
+    }
+    const timeout = setTimeout(() => {
+      setDisplayedText((prev) =>
+        isDeleting
+          ? currentRole.slice(0, prev.length - 1)
+          : currentRole.slice(0, prev.length + 1)
+      );
+    }, isDeleting ? 50 : 100);
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, roleIndex]);
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative px-4">
@@ -64,7 +84,7 @@ const Hero = () => {
             style={{ fontSize: 'clamp(3rem, 8vw, 4.5rem)' }}
             whileHover={{ scale: 1.05, textShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
           >
-            Hi, I'm Tharun Ratnala
+            Hi, I'm Tharun Kumar Ratnala
           </motion.h1>
 
           {/* Typing Animation */}
@@ -84,7 +104,7 @@ const Hero = () => {
           <p 
             className="text-xl md:text-2xl text-blue-200 mb-8 max-w-2xl mx-auto group-hover:text-blue-100 transition-colors duration-300"
           >
-            Final Year Engineering Student crafting the future with code, AI, and innovation
+            Crafting the future with code, AI, and innovation while building scalable software solutions that create real-world impact.
           </p>
 
           {/* CTA Buttons */}
@@ -110,7 +130,7 @@ const Hero = () => {
             </motion.button>
 
             <motion.a
-              href="https://drive.google.com/file/d/1odTSORO2sVg73G2JeZ7k8wIm2MFhi5sy/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1TlA2l5tkWO8kqEMhQkSd4lKgBEa6py8b/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ 
