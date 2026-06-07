@@ -70,7 +70,7 @@ const About = () => {
 
               {/* Resume Button */}
               <motion.a
-                href="https://drive.google.com/file/d/1odTSORO2sVg73G2JeZ7k8wIm2MFhi5sy/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1TlA2l5tkWO8kqEMhQkSd4lKgBEa6py8b/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ 
