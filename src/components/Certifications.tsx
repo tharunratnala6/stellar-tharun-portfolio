@@ -201,7 +201,7 @@ const Certifications = () => {
                     >
                       <Eye className="w-4 h-4" />
                     </motion.div>
-                    <span className="relative z-10">Certificate View</span>
+                    <span className="relative z-10">Certificate</span>
                   </motion.a>
                 </div>
               </div>
