@@ -102,7 +102,7 @@ const Hero = () => {
           </motion.div>
 
           <p 
-            className="text-xl md:text-2xl text-blue-200 mb-8 max-w-2xl mx-auto group-hover:text-blue-100 transition-colors duration-300"
+            className="text-xl md:text-2xl text-blue-200 mb-8 max-w-4xl mx-auto group-hover:text-blue-100 transition-colors duration-300"
           >
             Crafting the future with code, AI, and innovation while building scalable software solutions that create real-world impact.
           </p>
