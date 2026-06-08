@@ -1,33 +1,45 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Globe, Wrench, Cpu, Heart } from 'lucide-react';
+import { Code, Globe, Wrench, Cpu, Heart, Database, BookOpen } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
     {
       title: 'Programming Languages',
-      skills: ['Java', 'Python', 'C'],
+      skills: ['Java', 'Python', 'C (Basics)'],
       icon: Code,
       color: 'from-blue-500/20 to-cyan-500/20'
     },
     {
       title: 'Web Technologies',
-      skills: ['HTML', 'CSS'],
+      skills: ['HTML', 'CSS', 'React.js', 'FastAPI'],
       icon: Globe,
       color: 'from-green-500/20 to-emerald-500/20'
     },
     {
-      title: 'Frameworks',
-      skills: ['OpenCV', 'NumPy', 'Pandas', 'Matplotlib'],
+      title: 'Frameworks & Libraries',
+      skills: ['Scikit-learn', 'OpenCV', 'Pandas', 'NumPy', 'Flask', 'Streamlit'],
       icon: Cpu,
       color: 'from-purple-500/20 to-violet-500/20'
     },
     {
-      title: 'Software Tools',
-      skills: ['Git', 'Jupyter Notebook', 'Google Colab', 'VS Code'],
+      title: 'Databases',
+      skills: ['MySQL', 'PostgreSQL'],
+      icon: Database,
+      color: 'from-yellow-500/20 to-amber-500/20'
+    },
+    {
+      title: 'Tools & Platforms',
+      skills: ['Git', 'GitHub', 'VS Code', 'Jupyter Notebook', 'Google Colab'],
       icon: Wrench,
       color: 'from-orange-500/20 to-red-500/20'
+    },
+    {
+      title: 'Core CS Fundamentals',
+      skills: ['Data Structures & Algorithms', 'Object-Oriented Programming (OOP)', 'DBMS', 'Operating Systems', 'Computer Networks'],
+      icon: BookOpen,
+      color: 'from-indigo-500/20 to-blue-500/20'
     },
     {
       title: 'Soft Skills',
