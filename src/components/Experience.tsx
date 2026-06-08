@@ -6,7 +6,7 @@ import { Briefcase, Calendar, MapPin, Eye } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: 'Infosys Springboard – Full Stack Development Trainee (Virtual Internship)',
+      title: 'Infosys Springboard – Full Stack Development Trainee',
       company: 'Infosys Springboard',
       role: 'Full Stack Development Trainee',
       duration: 'Feb 2026 – Apr 2026',
