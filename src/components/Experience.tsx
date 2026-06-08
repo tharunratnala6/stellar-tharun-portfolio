@@ -28,7 +28,7 @@ Studied computer vision pipelines for analyzing driver actions from video data.
 Performed data preprocessing, model training, validation, and evaluation.
 Assisted in testing, documentation, and performance analysis of AI models.
 Gained practical experience in Artificial Intelligence, Deep Learning, and Computer Vision.`,
-      certificateLink: '',
+      certificateLink: '#',
       icon: Briefcase,
     },
   ];
