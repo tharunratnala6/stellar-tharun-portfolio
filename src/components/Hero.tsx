@@ -81,7 +81,7 @@ const Hero = () => {
           {/* Fixed Name with Enhanced Hover */}
           <motion.h1 
             className="font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:via-purple-300 group-hover:to-cyan-300 transition-all duration-500 whitespace-nowrap"
-            style={{ fontSize: 'clamp(1.5rem, 5.2vw, 4.5rem)' }}
+            style={{ fontSize: 'clamp(1.25rem, 4.2vw, 3.75rem)' }}
             whileHover={{ scale: 1.05, textShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
           >
             Hi, I'm Tharun Kumar Ratnala
