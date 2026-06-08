@@ -104,7 +104,7 @@ Gained practical experience in Artificial Intelligence, Deep Learning, and Compu
                         className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white hover:shadow-lg transition-all duration-300 font-medium text-sm"
                       >
                         <Eye className="w-4 h-4" />
-                        <span>Certificate View</span>
+                        <span>Certificate</span>
                       </motion.a>
                     </div>
                   )}

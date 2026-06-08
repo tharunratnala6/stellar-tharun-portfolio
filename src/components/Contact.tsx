@@ -356,7 +356,7 @@ const Contact = () => {
               <blockquote className="text-gray-300 italic leading-relaxed">
                 "The best way to predict the future is to create it. Let's build something extraordinary together."
               </blockquote>
-              <cite className="text-blue-400 font-medium mt-2 block">- Tharun Ratnala</cite>
+              <cite className="text-blue-400 font-medium mt-2 block">- THARUN KUMAR RATNALA</cite>
             </motion.div>
           </motion.div>
         </div>
@@ -370,7 +370,7 @@ const Contact = () => {
           className="text-center mt-16 pt-8 border-t border-white/10"
         >
           <p className="text-gray-400">
-            © 2025 Tharun Ratnala. Crafted with ❤️
+            © 2025 THARUN KUMAR RATNALA. Crafted with ❤️
           </p>
         </motion.div>
       </div>

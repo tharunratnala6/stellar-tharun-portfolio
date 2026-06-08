@@ -47,7 +47,8 @@ const About = () => {
               
               <motion.h3 
                 whileHover={{ scale: 1.05 }}
-                className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-3 relative z-10"
+                className="font-extrabold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-3 relative z-10 whitespace-nowrap"
+                style={{ fontSize: 'clamp(1.25rem, 3.4vw, 2.75rem)' }}
               >
                 THARUN KUMAR RATNALA
               </motion.h3>
@@ -106,7 +107,7 @@ const About = () => {
                   src={profilePhotoSmall}
                   srcSet={`${profilePhotoSmall} 320w, ${profilePhotoMedium} 560w`}
                   sizes="(max-width: 768px) 320px, 320px"
-                  alt="Tharun Ratnala" 
+                  alt="Tharun Kumar Ratnala" 
                   width={320}
                   height={320}
                   fetchPriority="high"

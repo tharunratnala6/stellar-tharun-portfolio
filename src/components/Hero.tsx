@@ -50,7 +50,7 @@ const Hero = () => {
             rotateY: 2,
             transition: { duration: 0.3 }
           }}
-          className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-12 shadow-2xl relative overflow-hidden group cursor-pointer"
+          className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-10 md:p-14 lg:p-16 shadow-2xl relative overflow-hidden group cursor-pointer"
         >
           {/* Enhanced Glowing borders */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-xl -z-10 group-hover:from-blue-500/30 group-hover:via-purple-500/30 group-hover:to-cyan-500/30 transition-all duration-500" />
@@ -81,7 +81,7 @@ const Hero = () => {
           {/* Fixed Name with Enhanced Hover */}
           <motion.h1 
             className="font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:via-purple-300 group-hover:to-cyan-300 transition-all duration-500 whitespace-nowrap"
-            style={{ fontSize: 'clamp(1.25rem, 4.2vw, 3.75rem)' }}
+            style={{ fontSize: 'clamp(1.4rem, 4.8vw, 4.5rem)' }}
             whileHover={{ scale: 1.05, textShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
           >
             Hi, I'm Tharun Kumar Ratnala
