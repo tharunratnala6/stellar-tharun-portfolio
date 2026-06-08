@@ -79,11 +79,11 @@ Gained practical experience in Artificial Intelligence, Deep Learning, and Compu
                   </motion.div>
                 </div>
                 <div className="flex-1 backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-white/10 group-hover:bg-white/10 group-hover:border-blue-400/30 transition-all duration-300">
-                  <div className="flex items-start justify-between mb-3">
+                  <div className="flex items-start justify-between mb-3 gap-3">
                     <div>
-                      <h3 className="text-white font-semibold text-lg mb-1">{experience.title}</h3>
-                      <p className="text-blue-400 font-medium">{experience.company}</p>
-                      <p className="text-purple-400 font-medium">{experience.role}</p>
+                      <h3 className="text-white font-bold text-xl md:text-2xl mb-1">{experience.title}</h3>
+                      <p className="text-blue-400 font-semibold text-base md:text-lg">{experience.company}</p>
+                      <p className="text-purple-400 font-semibold text-base md:text-lg">{experience.role}</p>
                     </div>
                     <span className="text-blue-400 font-bold text-sm bg-blue-500/20 px-3 py-1 rounded-full border border-blue-400/30 whitespace-nowrap">
                       {experience.duration}
@@ -96,13 +96,15 @@ Gained practical experience in Artificial Intelligence, Deep Learning, and Compu
                     <div className="flex justify-center">
                       <motion.a
                         href={experience.certificateLink}
-                        target="_blank"
+                        target={experience.certificateLink === '#' ? '_self' : '_blank'}
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
+                        onClick={(e) => { if (experience.certificateLink === '#') e.preventDefault(); }}
+                        whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(59, 130, 246, 0.4)", y: -2 }}
                         whileTap={{ scale: 0.95 }}
-                        className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl text-white hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 font-semibold text-base"
+                        className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white hover:shadow-lg transition-all duration-300 font-medium text-sm"
                       >
-                        <span>View Certificate</span>
+                        <Eye className="w-4 h-4" />
+                        <span>Certificate View</span>
                       </motion.a>
                     </div>
                   )}
