@@ -47,9 +47,9 @@ const About = () => {
               
               <motion.h3 
                 whileHover={{ scale: 1.05 }}
-                className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-3 relative z-10"
+                className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-3 relative z-10"
               >
-                THARUN RATNALA
+                THARUN KUMAR RATNALA
               </motion.h3>
               <motion.p 
                 whileHover={{ x: 5 }}
