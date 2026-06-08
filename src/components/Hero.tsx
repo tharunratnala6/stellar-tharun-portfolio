@@ -38,7 +38,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative px-4">
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+      <div className="max-w-6xl mx-auto text-center relative z-10">
         {/* Main Glass Panel with Enhanced Hover Effects */}
         <motion.div
           initial={{ scale: 0.98 }}
