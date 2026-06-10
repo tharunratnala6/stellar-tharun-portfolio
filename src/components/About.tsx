@@ -26,14 +26,14 @@ const About = () => {
         </motion.div>
 
         {/* Profile Section - Name and Picture at Top */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid lg:grid-cols-5 gap-12 items-center mb-20">
           {/* Left Side - Name and Description */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative lg:col-span-3"
           >
             <motion.div
               whileHover={{ 
@@ -41,20 +41,20 @@ const About = () => {
                 boxShadow: "0 25px 50px -12px rgba(59, 130, 246, 0.25)",
                 borderColor: "rgba(59, 130, 246, 0.5)"
               }}
-              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl relative overflow-hidden group transition-all duration-500"
+              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden group transition-all duration-500"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <motion.h3 
                 whileHover={{ scale: 1.05 }}
                 className="font-extrabold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-3 relative z-10 whitespace-nowrap"
-                style={{ fontSize: 'clamp(1.25rem, 3.4vw, 2.75rem)' }}
+                style={{ fontSize: 'clamp(1.1rem, 2.8vw, 2.5rem)' }}
               >
                 THARUN KUMAR RATNALA
               </motion.h3>
               <motion.p 
                 whileHover={{ x: 5 }}
-                className="text-blue-200 text-xl mb-6 relative z-10 transition-all duration-300"
+                className="text-blue-200 text-2xl md:text-3xl font-bold mb-6 relative z-10 transition-all duration-300"
               >
                 B.Tech Graduate | Software Engineer
               </motion.p>
@@ -92,7 +92,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative flex justify-center"
+            className="relative flex justify-center lg:col-span-2"
           >
             <motion.div
               whileHover={{ 
