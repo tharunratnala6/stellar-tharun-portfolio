@@ -26,14 +26,14 @@ const About = () => {
         </motion.div>
 
         {/* Profile Section - Name and Picture at Top */}
-        <div className="grid lg:grid-cols-5 gap-12 items-center mb-20">
+        <div className="grid lg:grid-cols-3 gap-12 items-center mb-20">
           {/* Left Side - Name and Description */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative lg:col-span-3"
+            className="relative lg:col-span-2 [container-type:inline-size]"
           >
             <motion.div
               whileHover={{ 
@@ -48,7 +48,7 @@ const About = () => {
               <motion.h3 
                 whileHover={{ scale: 1.05 }}
                 className="font-extrabold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-3 relative z-10 whitespace-nowrap"
-                style={{ fontSize: 'clamp(1.4rem, 3.6vw, 3.2rem)' }}
+                style={{ fontSize: 'clamp(1.4rem, 7.2cqw, 3.5rem)' }}
               >
                 THARUN KUMAR RATNALA
               </motion.h3>
@@ -92,7 +92,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative flex justify-center lg:col-span-2"
+            className="relative flex justify-center lg:col-span-1"
           >
             <motion.div
               whileHover={{ 
