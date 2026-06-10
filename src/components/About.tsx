@@ -48,7 +48,7 @@ const About = () => {
               <motion.h3 
                 whileHover={{ scale: 1.05 }}
                 className="font-extrabold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-3 relative z-10 whitespace-nowrap"
-                style={{ fontSize: 'clamp(1.1rem, 2.8vw, 2.5rem)' }}
+                style={{ fontSize: 'clamp(1.4rem, 3.6vw, 3.2rem)' }}
               >
                 THARUN KUMAR RATNALA
               </motion.h3>

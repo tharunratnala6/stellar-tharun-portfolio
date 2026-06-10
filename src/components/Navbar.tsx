@@ -65,7 +65,7 @@ const Navbar = () => {
               {/* Logo */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+                className="text-2xl font-extrabold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
               >
                 THARUN KUMAR RATNALA
               </motion.div>
